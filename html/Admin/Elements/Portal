@@ -14,19 +14,22 @@ my ($cfs_active) = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields WHER
 # User-defined groups only (Domain = 'UserDefined')
 my ($groups_count) = $dbh->selectrow_array("SELECT COUNT(*) FROM Groups WHERE Domain = 'UserDefined'");
 
-# Users — ids 1 (RT_System) and 2 (Nobody) are RT internal pseudo-users
+# Users — Disabled lives in Principals (1:1 with Users by id).
+# ids 1 (RT_System) and 2 (Nobody) are RT internal pseudo-users.
 my ($users_privileged) = $dbh->selectrow_array(
     "SELECT COUNT(DISTINCT u.id) FROM Users u
      JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
-     WHERE cgm.ImmediateParentId = 4 AND u.Disabled = 0 AND u.id > 2"
+     JOIN Principals p ON p.id = u.id
+     WHERE cgm.ImmediateParentId = 4 AND p.Disabled = 0 AND u.id > 2"
 );
 my ($users_unprivileged) = $dbh->selectrow_array(
     "SELECT COUNT(DISTINCT u.id) FROM Users u
      JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
-     WHERE cgm.ImmediateParentId = 5 AND u.Disabled = 0 AND u.id > 2"
+     JOIN Principals p ON p.id = u.id
+     WHERE cgm.ImmediateParentId = 5 AND p.Disabled = 0 AND u.id > 2"
 );
 my ($users_disabled) = $dbh->selectrow_array(
-    "SELECT COUNT(*) FROM Users WHERE Disabled = 1 AND id > 2"
+    "SELECT COUNT(*) FROM Principals WHERE Disabled = 1 AND PrincipalType = 'User' AND id > 2"
 );
 
 # Tickets — exclude id <= 0 (RT internal pseudo-tickets)
