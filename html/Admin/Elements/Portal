@@ -1,48 +1,35 @@
 <%init>
-use RT::Queues;
-use RT::CustomFields;
-use RT::Groups;
-use RT::Users;
-use RT::Tickets;
-
-# Queues
-my $queues = RT::Queues->new( $session{CurrentUser} );
-$queues->UnLimit;
-my $queues_total = $queues->Count;
-$queues->Limit( FIELD => 'Disabled', VALUE => 0 );
-my $queues_active = $queues->Count;
-
-# Custom Fields
-my $cfs = RT::CustomFields->new( $session{CurrentUser} );
-$cfs->UnLimit;
-my $cfs_total = $cfs->Count;
-$cfs->Limit( FIELD => 'Disabled', VALUE => 0 );
-my $cfs_active = $cfs->Count;
-
-# User-defined groups (exclude system groups: Privileged, Unprivileged, etc.)
-my $groups = RT::Groups->new( $session{CurrentUser} );
-$groups->LimitToUserDefinedGroups;
-my $groups_count = $groups->Count;
-
-# Users
-my $priv_users = RT::Users->new( $session{CurrentUser} );
-$priv_users->LimitToPrivileged;
-$priv_users->Limit( FIELD => 'Disabled', VALUE => 0 );
-my $users_privileged = $priv_users->Count;
-
-my $unpriv_users = RT::Users->new( $session{CurrentUser} );
-$unpriv_users->LimitToUnprivileged;
-$unpriv_users->Limit( FIELD => 'Disabled', VALUE => 0 );
-my $users_unprivileged = $unpriv_users->Count;
-
-my $disabled_users = RT::Users->new( $session{CurrentUser} );
-$disabled_users->UnLimit;
-$disabled_users->Limit( FIELD => 'Disabled', VALUE => 1 );
-my $users_disabled = $disabled_users->Count;
-
-# Tickets — query via DB for performance; exclude system pseudo-tickets (id<1)
+# All stats via direct SQL — RT ORM queries (especially LimitToPrivileged)
+# generate complex joins that exceed RT's DatabaseQueryTimeout.
 my $dbh = $RT::Handle->dbh;
 
+# Queues
+my ($queues_total)  = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0");
+my ($queues_active) = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0 AND Disabled = 0");
+
+# Custom Fields
+my ($cfs_total)  = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields");
+my ($cfs_active) = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields WHERE Disabled = 0");
+
+# User-defined groups only (Domain = 'UserDefined')
+my ($groups_count) = $dbh->selectrow_array("SELECT COUNT(*) FROM Groups WHERE Domain = 'UserDefined'");
+
+# Users — ids 1 (RT_System) and 2 (Nobody) are RT internal pseudo-users
+my ($users_privileged) = $dbh->selectrow_array(
+    "SELECT COUNT(DISTINCT u.id) FROM Users u
+     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
+     WHERE cgm.ImmediateParentId = 4 AND u.Disabled = 0 AND u.id > 2"
+);
+my ($users_unprivileged) = $dbh->selectrow_array(
+    "SELECT COUNT(DISTINCT u.id) FROM Users u
+     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
+     WHERE cgm.ImmediateParentId = 5 AND u.Disabled = 0 AND u.id > 2"
+);
+my ($users_disabled) = $dbh->selectrow_array(
+    "SELECT COUNT(*) FROM Users WHERE Disabled = 1 AND id > 2"
+);
+
+# Tickets — exclude id <= 0 (RT internal pseudo-tickets)
 my %ticket_counts;
 
 # Total (all non-deleted)
