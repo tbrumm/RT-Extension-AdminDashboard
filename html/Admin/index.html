@@ -1,0 +1,358 @@
+<%init>
+my $dbh = $RT::Handle->dbh;
+
+my ($queues_total)  = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0");
+my ($queues_active) = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0 AND Disabled = 0");
+my ($cfs_total)     = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields");
+my ($cfs_active)    = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields WHERE Disabled = 0");
+my ($groups_count)  = $dbh->selectrow_array("SELECT COUNT(*) FROM Groups WHERE Domain = 'UserDefined'");
+
+my ($users_privileged) = $dbh->selectrow_array(
+    "SELECT COUNT(DISTINCT u.id) FROM Users u
+     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
+     JOIN Principals p ON p.id = u.id
+     WHERE cgm.ImmediateParentId = 4 AND p.Disabled = 0 AND u.id > 2"
+);
+my ($users_unprivileged) = $dbh->selectrow_array(
+    "SELECT COUNT(DISTINCT u.id) FROM Users u
+     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
+     JOIN Principals p ON p.id = u.id
+     WHERE cgm.ImmediateParentId = 5 AND p.Disabled = 0 AND u.id > 2"
+);
+my ($users_disabled) = $dbh->selectrow_array(
+    "SELECT COUNT(*) FROM Principals WHERE Disabled = 1 AND PrincipalType = 'User' AND id > 2"
+);
+
+my $status_rows = $dbh->selectall_arrayref(
+    "SELECT Status, COUNT(*) FROM Tickets WHERE id > 0 GROUP BY Status"
+);
+my %by_status;
+$by_status{$_->[0]} = $_->[1] for @$status_rows;
+
+my @done_statuses   = qw(resolved rejected done ClosedByHousekeeping on_hold cancelled);
+my $tickets_new     = $by_status{new} // 0;
+my $tickets_deleted = $by_status{deleted} // 0;
+my $tickets_resolved = 0;
+$tickets_resolved += ($by_status{$_} // 0) for @done_statuses;
+my $tickets_active = 0;
+for my $s (keys %by_status) {
+    next if $s eq 'new' || $s eq 'deleted' || grep { $_ eq $s } @done_statuses;
+    $tickets_active += $by_status{$s};
+}
+my $tickets_total = $tickets_new + $tickets_active + $tickets_resolved + $tickets_deleted;
+
+my $users_total = $users_privileged + $users_unprivileged;
+
+my @menu_items = grep { defined $_->path && $_->path ne '' }
+                 Menu()->child('admin')->children;
+
+my %icon_map = (
+    'Users'        => ['people-fill',                '#2563eb'],
+    'Groups'       => ['diagram-3-fill',             '#7c3aed'],
+    'Queues'       => ['collection-fill',            '#0891b2'],
+    'CustomFields' => ['ui-checks-grid',             '#ea580c'],
+    'CustomRoles'  => ['person-badge-fill',          '#9333ea'],
+    'Scrips'       => ['lightning-charge-fill',      '#d97706'],
+    'Lifecycles'   => ['arrow-repeat',               '#059669'],
+    'PageLayouts'  => ['layout-text-window-sidebar', '#64748b'],
+    'Global'       => ['sliders',                    '#dc2626'],
+    'Articles'     => ['journal-richtext',           '#2563eb'],
+    'Asset'        => ['box-seam-fill',              '#16a34a'],
+    'Tools'        => ['tools',                      '#475569'],
+    'FormTools'    => ['file-earmark-text-fill',     '#0891b2'],
+    'Portfolios'   => ['briefcase-fill',             '#7c3aed'],
+);
+
+sub _icon {
+    my $path = shift // '';
+    for my $k (sort { length($b) <=> length($a) } keys %icon_map) {
+        return $icon_map{$k} if $path =~ /\b\Q$k\E\b/i;
+    }
+    return ['grid-fill', '#64748b'];
+}
+</%init>
+<div class="rt-admin-db">
+
+  <%-- ── Ticket stats ────────────────────────────────── --%>
+  <div class="row g-2 mb-3">
+
+    <div class="col-6 col-sm col-lg">
+      <div class="sc sc--total">
+        <i class="bi bi-ticket-perforated-fill sc__bg-icon"></i>
+        <div class="sc__val" data-counter="<% $tickets_total %>">0</div>
+        <div class="sc__lbl"><% loc('Tickets gesamt') %></div>
+      </div>
+    </div>
+
+    <div class="col-6 col-sm col-lg">
+      <div class="sc sc--new">
+        <i class="bi bi-inbox-fill sc__bg-icon"></i>
+        <div class="sc__val" data-counter="<% $tickets_new %>">0</div>
+        <div class="sc__lbl"><% loc('Neu') %></div>
+      </div>
+    </div>
+
+    <div class="col-6 col-sm col-lg">
+      <div class="sc sc--active">
+        <i class="bi bi-arrow-right-circle-fill sc__bg-icon"></i>
+        <div class="sc__val" data-counter="<% $tickets_active %>">0</div>
+        <div class="sc__lbl"><% loc('Aktiv') %></div>
+      </div>
+    </div>
+
+    <div class="col-6 col-sm col-lg">
+      <div class="sc sc--resolved">
+        <i class="bi bi-check-circle-fill sc__bg-icon"></i>
+        <div class="sc__val" data-counter="<% $tickets_resolved %>">0</div>
+        <div class="sc__lbl"><% loc('Gel\x{f6}st') %></div>
+      </div>
+    </div>
+
+    <div class="col-6 col-sm col-lg">
+      <div class="sc sc--deleted">
+        <i class="bi bi-trash3-fill sc__bg-icon"></i>
+        <div class="sc__val" data-counter="<% $tickets_deleted %>">0</div>
+        <div class="sc__lbl"><% loc('Gel\x{f6}scht') %></div>
+      </div>
+    </div>
+
+  </div>
+
+  <%-- ── Info cards ─────────────────────────────────── --%>
+  <div class="row g-2 mb-4">
+
+    <div class="col-md-6">
+      <div class="ic">
+        <div class="ic__hd"><i class="bi bi-people-fill me-2"></i><% loc('Benutzer') %></div>
+        <div class="ic__bd">
+
+          <div class="ir">
+            <span class="ir__lbl"><% loc('Privilegiert') %></span>
+            <span class="ir__bar">
+              <span class="ir__fill ir__fill--a" style="width:<% $users_total > 0 ? int(100*$users_privileged/$users_total) : 0 %>%"></span>
+            </span>
+            <span class="ir__val ir__val--a" data-counter="<% $users_privileged %>">0</span>
+          </div>
+
+          <div class="ir">
+            <span class="ir__lbl"><% loc('Unprivilegiert') %></span>
+            <span class="ir__bar">
+              <span class="ir__fill ir__fill--b" style="width:<% $users_total > 0 ? int(100*$users_unprivileged/$users_total) : 0 %>%"></span>
+            </span>
+            <span class="ir__val" data-counter="<% $users_unprivileged %>">0</span>
+          </div>
+
+          <div class="ir">
+            <span class="ir__lbl ir__lbl--dim"><% loc('Deaktiviert') %></span>
+            <span class="ir__bar">
+              <span class="ir__fill ir__fill--c" style="width:<% ($users_total+$users_disabled) > 0 ? int(100*$users_disabled/($users_total+$users_disabled)) : 0 %>%"></span>
+            </span>
+            <span class="ir__val ir__val--dim" data-counter="<% $users_disabled %>">0</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="ic">
+        <div class="ic__hd"><i class="bi bi-gear-fill me-2"></i><% loc('Konfiguration') %></div>
+        <div class="ic__bd">
+
+          <div class="ir">
+            <span class="ir__lbl"><% loc('Queues') %></span>
+            <span class="ir__bar">
+              <span class="ir__fill ir__fill--a" style="width:<% $queues_total > 0 ? int(100*$queues_active/$queues_total) : 0 %>%"></span>
+            </span>
+            <span class="ir__val ir__val--a" data-counter="<% $queues_active %>">0</span>
+            <span class="ir__tot">/ <% $queues_total %></span>
+          </div>
+
+          <div class="ir">
+            <span class="ir__lbl"><% loc('Custom Fields') %></span>
+            <span class="ir__bar">
+              <span class="ir__fill ir__fill--a" style="width:<% $cfs_total > 0 ? int(100*$cfs_active/$cfs_total) : 0 %>%"></span>
+            </span>
+            <span class="ir__val ir__val--a" data-counter="<% $cfs_active %>">0</span>
+            <span class="ir__tot">/ <% $cfs_total %></span>
+          </div>
+
+          <div class="ir">
+            <span class="ir__lbl"><% loc('Gruppen') %></span>
+            <span class="ir__bar"></span>
+            <span class="ir__val ir__val--a" data-counter="<% $groups_count %>">0</span>
+            <span class="ir__tot">&nbsp;</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <%-- ── Admin menu ──────────────────────────────────── --%>
+  <div class="row g-2">
+% for my $item (@menu_items) {
+%   my $inf   = _icon($item->path);
+%   my $icon  = $inf->[0];
+%   my $color = $inf->[1];
+    <div class="col-6 col-md-4 col-lg-3">
+      <a href="<% $item->path %>" class="mc">
+        <span class="mc__icon" style="background:<% $color %>18;color:<% $color %>">
+          <i class="bi bi-<% $icon %>"></i>
+        </span>
+        <span class="mc__bd">
+          <span class="mc__title"><% $item->title || '' %></span>
+          <span class="mc__desc"><% $item->description || '' %></span>
+        </span>
+      </a>
+    </div>
+% }
+  </div>
+
+</div>
+
+<style>
+.rt-admin-db { padding-bottom: 2rem; }
+
+/* Stat cards */
+.sc {
+  position: relative; overflow: hidden;
+  border-radius: .65rem; padding: 1rem 1rem .8rem;
+  color: #fff; height: 100%; min-height: 95px;
+}
+.sc__bg-icon {
+  position: absolute; top: .5rem; right: .75rem;
+  font-size: 2.2rem; opacity: .18; pointer-events: none;
+}
+.sc__val {
+  font-size: 2rem; font-weight: 700; line-height: 1.1;
+  letter-spacing: -.03em;
+}
+.sc__lbl {
+  font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .07em; opacity: .85; margin-top: .2rem;
+}
+.sc--total    { background: linear-gradient(135deg,#1e40af,#3b82f6); }
+.sc--new      { background: linear-gradient(135deg,#92400e,#f59e0b); }
+.sc--active   { background: linear-gradient(135deg,#155e75,#22d3ee); }
+.sc--resolved { background: linear-gradient(135deg,#14532d,#22c55e); }
+.sc--deleted  { background: linear-gradient(135deg,#374151,#9ca3af); }
+
+/* Info cards */
+.ic {
+  border: 1px solid var(--bs-border-color);
+  border-radius: .65rem; overflow: hidden;
+  background: var(--bs-card-bg, var(--bs-body-bg));
+  height: 100%;
+}
+.ic__hd {
+  padding: .55rem 1rem;
+  font-size: .72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  background: var(--bs-tertiary-bg, rgba(0,0,0,.04));
+  border-bottom: 1px solid var(--bs-border-color);
+  color: var(--bs-secondary-color, #6c757d);
+}
+.ic__bd { padding: .5rem 1rem; }
+
+.ir {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .28rem 0;
+}
+.ir__lbl {
+  width: 105px; font-size: .83rem; flex-shrink: 0;
+  color: var(--bs-body-color);
+}
+.ir__lbl--dim { color: var(--bs-secondary-color, #6c757d); }
+.ir__bar {
+  flex: 1; height: 5px;
+  background: var(--bs-border-color);
+  border-radius: 3px; overflow: hidden;
+}
+.ir__fill {
+  display: block; height: 100%; border-radius: 3px;
+  transition: width .9s cubic-bezier(.4,0,.2,1);
+}
+.ir__fill--a { background: #3b82f6; }
+.ir__fill--b { background: #22d3ee; }
+.ir__fill--c { background: #9ca3af; }
+.ir__val {
+  font-weight: 700; font-size: .9rem;
+  min-width: 2.4rem; text-align: right;
+  color: var(--bs-body-color);
+}
+.ir__val--a   { color: #3b82f6; }
+.ir__val--dim { color: var(--bs-secondary-color, #9ca3af); }
+.ir__tot {
+  font-size: .75rem; color: var(--bs-secondary-color, #6c757d);
+  min-width: 2.5rem;
+}
+
+/* Menu cards */
+.mc {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .75rem .85rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: .65rem;
+  background: var(--bs-card-bg, var(--bs-body-bg));
+  text-decoration: none; color: var(--bs-body-color);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .15s ease;
+  height: 100%;
+}
+.mc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.09);
+  border-color: var(--bs-primary);
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+.mc__icon {
+  width: 40px; height: 40px; border-radius: .5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.mc__bd { display: flex; flex-direction: column; min-width: 0; }
+.mc__title {
+  font-weight: 600; font-size: .88rem; line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.mc__desc {
+  font-size: .75rem; line-height: 1.3; margin-top: .1rem;
+  color: var(--bs-secondary-color, #6c757d);
+  overflow: hidden; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+</style>
+
+<script>
+(function () {
+  var $ = jQuery;
+
+  function runCounters(root) {
+    (root || document).querySelectorAll('[data-counter]').forEach(function (el) {
+      var target = parseInt(el.dataset.counter, 10) || 0;
+      if (target === 0) { el.textContent = '0'; return; }
+      var steps = 28, step = 0;
+      var timer = setInterval(function () {
+        step++;
+        el.textContent = (step >= steps ? target : Math.round(target * step / steps))
+                           .toLocaleString('de-DE');
+        if (step >= steps) clearInterval(timer);
+      }, 600 / steps);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { runCounters(); });
+  } else {
+    runCounters();
+  }
+
+  document.addEventListener('htmx:afterSettle', function (e) {
+    if (e.detail && e.detail.elt) runCounters(e.detail.elt);
+  });
+}());
+</script>
+
+% $m->callback( CallbackName => 'AfterRTPortal', ARGSRef => \%ARGS );
