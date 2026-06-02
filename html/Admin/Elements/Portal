@@ -66,24 +66,24 @@ for my $status (keys %by_status) {
     $ticket_counts{active} += $by_status{$status};
 }
 </%init>
-<&| /Widgets/TitleBox, title => loc('RT Interna') &>
+<&| /Widgets/TitleBox, title => loc('RT Internals') &>
 <div class="admin-dashboard-stats">
 
   <div class="stats-section">
-    <h4><% loc('Konfiguration') %></h4>
+    <h4><% loc('Configuration') %></h4>
     <table class="stats-table">
       <tr>
         <td class="stat-label"><% loc('Queues') %></td>
         <td class="stat-value"><% $queues_active %></td>
-        <td class="stat-sub">/ <% $queues_total %> <% loc('gesamt') %></td>
+        <td class="stat-sub">/ <% $queues_total %></td>
       </tr>
       <tr>
         <td class="stat-label"><% loc('Custom Fields') %></td>
         <td class="stat-value"><% $cfs_active %></td>
-        <td class="stat-sub">/ <% $cfs_total %> <% loc('gesamt') %></td>
+        <td class="stat-sub">/ <% $cfs_total %></td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Gruppen') %></td>
+        <td class="stat-label"><% loc('Groups') %></td>
         <td class="stat-value"><% $groups_count %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
@@ -91,20 +91,20 @@ for my $status (keys %by_status) {
   </div>
 
   <div class="stats-section">
-    <h4><% loc('Benutzer') %></h4>
+    <h4><% loc('Users') %></h4>
     <table class="stats-table">
       <tr>
-        <td class="stat-label"><% loc('Privilegiert') %></td>
+        <td class="stat-label"><% loc('Privileged') %></td>
         <td class="stat-value"><% $users_privileged %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Unprivilegiert') %></td>
+        <td class="stat-label"><% loc('Unprivileged') %></td>
         <td class="stat-value"><% $users_unprivileged %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Deaktiviert') %></td>
+        <td class="stat-label"><% loc('Disabled') %></td>
         <td class="stat-value stat-muted"><% $users_disabled %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
@@ -115,27 +115,27 @@ for my $status (keys %by_status) {
     <h4><% loc('Tickets') %></h4>
     <table class="stats-table">
       <tr>
-        <td class="stat-label"><% loc('Gesamt') %></td>
+        <td class="stat-label"><% loc('Total') %></td>
         <td class="stat-value"><% $ticket_counts{total} %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Neu') %></td>
+        <td class="stat-label"><% loc('New') %></td>
         <td class="stat-value stat-new"><% $ticket_counts{new} %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Aktiv') %></td>
+        <td class="stat-label"><% loc('Active') %></td>
         <td class="stat-value stat-active"><% $ticket_counts{active} %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Gel\x{f6}st/Abgelehnt') %></td>
+        <td class="stat-label"><% loc('Resolved') %></td>
         <td class="stat-value stat-resolved"><% $ticket_counts{resolved} %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>
       <tr>
-        <td class="stat-label"><% loc('Gel\x{f6}scht') %></td>
+        <td class="stat-label"><% loc('Deleted') %></td>
         <td class="stat-value stat-muted"><% $ticket_counts{deleted} %></td>
         <td class="stat-sub">&nbsp;</td>
       </tr>

@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - hr translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hr\n"
+
+msgid "Active"
+msgstr "Aktivan"
+
+msgid "Configuration"
+msgstr "Konfiguracija"
+
+msgid "Custom Fields"
+msgstr "Prilagođena polja"
+
+msgid "Deleted"
+msgstr "Obrisano"
+
+msgid "Disabled"
+msgstr "Onemogućeno"
+
+msgid "Groups"
+msgstr "Grupe"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "Privileged"
+msgstr "Privilegiran"
+
+msgid "Queues"
+msgstr "Redovi"
+
+msgid "Resolved"
+msgstr "Riješeno"
+
+msgid "Tickets total"
+msgstr "Ukupno zahtjeva"
+
+msgid "Total"
+msgstr "Ukupno"
+
+msgid "Unprivileged"
+msgstr "Neprivilegiran"
+
+msgid "Users"
+msgstr "Korisnici"
+

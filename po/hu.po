@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - hu translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+
+msgid "Active"
+msgstr "Aktív"
+
+msgid "Configuration"
+msgstr "Konfiguráció"
+
+msgid "Custom Fields"
+msgstr "Egyéni mezők"
+
+msgid "Deleted"
+msgstr "Törölve"
+
+msgid "Disabled"
+msgstr "Letiltva"
+
+msgid "Groups"
+msgstr "Csoportok"
+
+msgid "New"
+msgstr "Új"
+
+msgid "Privileged"
+msgstr "Kiemelt"
+
+msgid "Queues"
+msgstr "Várólisták"
+
+msgid "Resolved"
+msgstr "Megoldva"
+
+msgid "Tickets total"
+msgstr "Jegyek összesen"
+
+msgid "Total"
+msgstr "Összesen"
+
+msgid "Unprivileged"
+msgstr "Nem kiemelt"
+
+msgid "Users"
+msgstr "Felhasználók"
+

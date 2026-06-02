@@ -1,0 +1,47 @@
+# RT-Extension-AdminDashboard - da translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "Custom Fields"
+msgstr "Brugerdefinerede felter"
+
+msgid "Deleted"
+msgstr "Slettet"
+
+msgid "Disabled"
+msgstr "Deaktiveret"
+
+msgid "Groups"
+msgstr "Grupper"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Privileged"
+msgstr "Privilegeret"
+
+msgid "Queues"
+msgstr "Køer"
+
+msgid "Resolved"
+msgstr "Løst"
+
+msgid "Tickets total"
+msgstr "Sager i alt"
+
+msgid "Unprivileged"
+msgstr "Ikke-privilegeret"
+
+msgid "Users"
+msgstr "Brugere"
+

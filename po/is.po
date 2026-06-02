@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - is translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: is\n"
+
+msgid "Active"
+msgstr "Virkt"
+
+msgid "Configuration"
+msgstr "Stillingar"
+
+msgid "Custom Fields"
+msgstr "Sérsniðin svæði"
+
+msgid "Deleted"
+msgstr "Eytt"
+
+msgid "Disabled"
+msgstr "Óvirkt"
+
+msgid "Groups"
+msgstr "Hópar"
+
+msgid "New"
+msgstr "Nýtt"
+
+msgid "Privileged"
+msgstr "Forréttindanotandi"
+
+msgid "Queues"
+msgstr "Biðraðir"
+
+msgid "Resolved"
+msgstr "Leyst"
+
+msgid "Tickets total"
+msgstr "Mál alls"
+
+msgid "Total"
+msgstr "Alls"
+
+msgid "Unprivileged"
+msgstr "Venjulegur notandi"
+
+msgid "Users"
+msgstr "Notendur"
+

@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - pl translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+
+msgid "Active"
+msgstr "Aktywny"
+
+msgid "Configuration"
+msgstr "Konfiguracja"
+
+msgid "Custom Fields"
+msgstr "Pola niestandardowe"
+
+msgid "Deleted"
+msgstr "Usunięty"
+
+msgid "Disabled"
+msgstr "Wyłączony"
+
+msgid "Groups"
+msgstr "Grupy"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Privileged"
+msgstr "Uprzywilejowany"
+
+msgid "Queues"
+msgstr "Kolejki"
+
+msgid "Resolved"
+msgstr "Rozwiązany"
+
+msgid "Tickets total"
+msgstr "Łącznie zgłoszeń"
+
+msgid "Total"
+msgstr "Łącznie"
+
+msgid "Unprivileged"
+msgstr "Nieuprzywilejowany"
+
+msgid "Users"
+msgstr "Użytkownicy"
+

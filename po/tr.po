@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - tr translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+
+msgid "Active"
+msgstr "Aktif"
+
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+msgid "Custom Fields"
+msgstr "Özel alanlar"
+
+msgid "Deleted"
+msgstr "Silindi"
+
+msgid "Disabled"
+msgstr "Devre dışı"
+
+msgid "Groups"
+msgstr "Gruplar"
+
+msgid "New"
+msgstr "Yeni"
+
+msgid "Privileged"
+msgstr "Ayrıcalıklı"
+
+msgid "Queues"
+msgstr "Kuyruklar"
+
+msgid "Resolved"
+msgstr "Çözüldü"
+
+msgid "Tickets total"
+msgstr "Toplam biletler"
+
+msgid "Total"
+msgstr "Toplam"
+
+msgid "Unprivileged"
+msgstr "Ayrıcalıksız"
+
+msgid "Users"
+msgstr "Kullanıcılar"
+

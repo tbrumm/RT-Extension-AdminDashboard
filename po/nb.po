@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - nb translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Configuration"
+msgstr "Konfigurasjon"
+
+msgid "Custom Fields"
+msgstr "Egendefinerte felt"
+
+msgid "Deleted"
+msgstr "Slettet"
+
+msgid "Disabled"
+msgstr "Deaktivert"
+
+msgid "Groups"
+msgstr "Grupper"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Privileged"
+msgstr "Privilegert"
+
+msgid "Queues"
+msgstr "Køer"
+
+msgid "Resolved"
+msgstr "Løst"
+
+msgid "Tickets total"
+msgstr "Totalt antall saker"
+
+msgid "Total"
+msgstr "Totalt"
+
+msgid "Unprivileged"
+msgstr "Ikke-privilegert"
+
+msgid "Users"
+msgstr "Brukere"
+

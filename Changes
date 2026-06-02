@@ -1,0 +1,13 @@
+1.1.0 2026-06-02
+ - Internationalize all UI strings; add translations for 37 languages
+ - Switch all loc() msgids to English; German and other languages via po/
+
+1.0.0 2026-06-02
+ - Initial release
+ - Replace RT admin page with live statistics dashboard
+ - Ticket stat cards with counter animation
+ - User info card with progress bars
+ - Configuration info card (Queues, Custom Fields, Groups)
+ - Admin menu as responsive icon-card grid
+ - Per-process 10-minute query cache
+ - Theme-aware via Bootstrap 5 CSS variables

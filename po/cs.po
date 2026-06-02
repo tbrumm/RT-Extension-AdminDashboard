@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - cs translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+
+msgid "Active"
+msgstr "Aktivní"
+
+msgid "Configuration"
+msgstr "Konfigurace"
+
+msgid "Custom Fields"
+msgstr "Vlastní pole"
+
+msgid "Deleted"
+msgstr "Smazáno"
+
+msgid "Disabled"
+msgstr "Vypnuto"
+
+msgid "Groups"
+msgstr "Skupiny"
+
+msgid "New"
+msgstr "Nový"
+
+msgid "Privileged"
+msgstr "Privilegovaný"
+
+msgid "Queues"
+msgstr "Fronty"
+
+msgid "Resolved"
+msgstr "Vyřešeno"
+
+msgid "Tickets total"
+msgstr "Celkem požadavků"
+
+msgid "Total"
+msgstr "Celkem"
+
+msgid "Unprivileged"
+msgstr "Neprivilegovaný"
+
+msgid "Users"
+msgstr "Uživatelé"
+

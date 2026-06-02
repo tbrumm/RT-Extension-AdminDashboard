@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - fa translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Configuration"
+msgstr "پیکربندی"
+
+msgid "Custom Fields"
+msgstr "فیلدهای سفارشی"
+
+msgid "Deleted"
+msgstr "حذف شده"
+
+msgid "Disabled"
+msgstr "غیرفعال"
+
+msgid "Groups"
+msgstr "گروه‌ها"
+
+msgid "New"
+msgstr "جدید"
+
+msgid "Privileged"
+msgstr "دارای امتیاز"
+
+msgid "Queues"
+msgstr "صف‌ها"
+
+msgid "Resolved"
+msgstr "حل شده"
+
+msgid "Tickets total"
+msgstr "مجموع درخواست‌ها"
+
+msgid "Total"
+msgstr "مجموع"
+
+msgid "Unprivileged"
+msgstr "بدون امتیاز"
+
+msgid "Users"
+msgstr "کاربران"
+

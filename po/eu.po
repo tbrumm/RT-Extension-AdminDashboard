@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - eu translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
+
+msgid "Active"
+msgstr "Aktibo"
+
+msgid "Configuration"
+msgstr "Konfigurazioa"
+
+msgid "Custom Fields"
+msgstr "Eremu pertsonalizatuak"
+
+msgid "Deleted"
+msgstr "Ezabatua"
+
+msgid "Disabled"
+msgstr "Desgaitua"
+
+msgid "Groups"
+msgstr "Taldeak"
+
+msgid "New"
+msgstr "Berria"
+
+msgid "Privileged"
+msgstr "Pribilegiatua"
+
+msgid "Queues"
+msgstr "Ilarak"
+
+msgid "Resolved"
+msgstr "Ebatzita"
+
+msgid "Tickets total"
+msgstr "Txartelak guztira"
+
+msgid "Total"
+msgstr "Guztira"
+
+msgid "Unprivileged"
+msgstr "Ez-pribilegiatua"
+
+msgid "Users"
+msgstr "Erabiltzaileak"
+

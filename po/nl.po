@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - nl translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+
+msgid "Active"
+msgstr "Actief"
+
+msgid "Configuration"
+msgstr "Configuratie"
+
+msgid "Custom Fields"
+msgstr "Aangepaste velden"
+
+msgid "Deleted"
+msgstr "Verwijderd"
+
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+msgid "Groups"
+msgstr "Groepen"
+
+msgid "New"
+msgstr "Nieuw"
+
+msgid "Privileged"
+msgstr "Geprivilegieerd"
+
+msgid "Queues"
+msgstr "Wachtrijen"
+
+msgid "Resolved"
+msgstr "Opgelost"
+
+msgid "Tickets total"
+msgstr "Totaal tickets"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Unprivileged"
+msgstr "Niet geprivilegieerd"
+
+msgid "Users"
+msgstr "Gebruikers"
+

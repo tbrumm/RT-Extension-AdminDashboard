@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - zh_CN translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+
+msgid "Active"
+msgstr "活跃"
+
+msgid "Configuration"
+msgstr "配置"
+
+msgid "Custom Fields"
+msgstr "自定义字段"
+
+msgid "Deleted"
+msgstr "已删除"
+
+msgid "Disabled"
+msgstr "已禁用"
+
+msgid "Groups"
+msgstr "组"
+
+msgid "New"
+msgstr "新建"
+
+msgid "Privileged"
+msgstr "特权用户"
+
+msgid "Queues"
+msgstr "队列"
+
+msgid "Resolved"
+msgstr "已解决"
+
+msgid "Tickets total"
+msgstr "工单总数"
+
+msgid "Total"
+msgstr "总计"
+
+msgid "Unprivileged"
+msgstr "普通用户"
+
+msgid "Users"
+msgstr "用户"
+

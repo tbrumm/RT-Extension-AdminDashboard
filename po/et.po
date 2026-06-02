@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - et translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+
+msgid "Active"
+msgstr "Aktiivne"
+
+msgid "Configuration"
+msgstr "Seaded"
+
+msgid "Custom Fields"
+msgstr "Kohandatud väljad"
+
+msgid "Deleted"
+msgstr "Kustutatud"
+
+msgid "Disabled"
+msgstr "Keelatud"
+
+msgid "Groups"
+msgstr "Grupid"
+
+msgid "New"
+msgstr "Uus"
+
+msgid "Privileged"
+msgstr "Privilegeeritud"
+
+msgid "Queues"
+msgstr "Järjekorrad"
+
+msgid "Resolved"
+msgstr "Lahendatud"
+
+msgid "Tickets total"
+msgstr "Pileteid kokku"
+
+msgid "Total"
+msgstr "Kokku"
+
+msgid "Unprivileged"
+msgstr "Privilegeerimata"
+
+msgid "Users"
+msgstr "Kasutajad"
+

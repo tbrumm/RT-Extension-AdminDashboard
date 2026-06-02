@@ -1,0 +1,47 @@
+# RT-Extension-AdminDashboard - ca translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+
+msgid "Active"
+msgstr "Actiu"
+
+msgid "Configuration"
+msgstr "Configuració"
+
+msgid "Custom Fields"
+msgstr "Camps personalitzats"
+
+msgid "Deleted"
+msgstr "Eliminat"
+
+msgid "Disabled"
+msgstr "Desactivat"
+
+msgid "Groups"
+msgstr "Grups"
+
+msgid "New"
+msgstr "Nou"
+
+msgid "Privileged"
+msgstr "Privilegiat"
+
+msgid "Queues"
+msgstr "Cues"
+
+msgid "Resolved"
+msgstr "Resolt"
+
+msgid "Tickets total"
+msgstr "Total de tiquets"
+
+msgid "Unprivileged"
+msgstr "No privilegiat"
+
+msgid "Users"
+msgstr "Usuaris"
+

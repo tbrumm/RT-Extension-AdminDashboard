@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - ar translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Configuration"
+msgstr "الإعدادات"
+
+msgid "Custom Fields"
+msgstr "الحقول المخصصة"
+
+msgid "Deleted"
+msgstr "محذوف"
+
+msgid "Disabled"
+msgstr "معطّل"
+
+msgid "Groups"
+msgstr "المجموعات"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "Privileged"
+msgstr "متميز"
+
+msgid "Queues"
+msgstr "الطوابير"
+
+msgid "Resolved"
+msgstr "محلول"
+
+msgid "Tickets total"
+msgstr "إجمالي التذاكر"
+
+msgid "Total"
+msgstr "الإجمالي"
+
+msgid "Unprivileged"
+msgstr "غير متميز"
+
+msgid "Users"
+msgstr "المستخدمون"
+

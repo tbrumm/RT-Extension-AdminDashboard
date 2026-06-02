@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - el translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+
+msgid "Active"
+msgstr "Ενεργός"
+
+msgid "Configuration"
+msgstr "Ρυθμίσεις"
+
+msgid "Custom Fields"
+msgstr "Προσαρμοσμένα πεδία"
+
+msgid "Deleted"
+msgstr "Διαγράφηκε"
+
+msgid "Disabled"
+msgstr "Ανενεργό"
+
+msgid "Groups"
+msgstr "Ομάδες"
+
+msgid "New"
+msgstr "Νέο"
+
+msgid "Privileged"
+msgstr "Προνομιούχος"
+
+msgid "Queues"
+msgstr "Ουρές"
+
+msgid "Resolved"
+msgstr "Επιλύθηκε"
+
+msgid "Tickets total"
+msgstr "Σύνολο αιτημάτων"
+
+msgid "Total"
+msgstr "Σύνολο"
+
+msgid "Unprivileged"
+msgstr "Μη προνομιούχος"
+
+msgid "Users"
+msgstr "Χρήστες"
+

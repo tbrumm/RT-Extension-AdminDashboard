@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - ja translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+
+msgid "Active"
+msgstr "アクティブ"
+
+msgid "Configuration"
+msgstr "設定"
+
+msgid "Custom Fields"
+msgstr "カスタムフィールド"
+
+msgid "Deleted"
+msgstr "削除済み"
+
+msgid "Disabled"
+msgstr "無効"
+
+msgid "Groups"
+msgstr "グループ"
+
+msgid "New"
+msgstr "新規"
+
+msgid "Privileged"
+msgstr "特権ユーザー"
+
+msgid "Queues"
+msgstr "キュー"
+
+msgid "Resolved"
+msgstr "解決済み"
+
+msgid "Tickets total"
+msgstr "チケット合計"
+
+msgid "Total"
+msgstr "合計"
+
+msgid "Unprivileged"
+msgstr "一般ユーザー"
+
+msgid "Users"
+msgstr "ユーザー"
+

@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - lt translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+
+msgid "Active"
+msgstr "Aktyvus"
+
+msgid "Configuration"
+msgstr "Konfigūracija"
+
+msgid "Custom Fields"
+msgstr "Pasirinktiniai laukai"
+
+msgid "Deleted"
+msgstr "Ištrintas"
+
+msgid "Disabled"
+msgstr "Išjungtas"
+
+msgid "Groups"
+msgstr "Grupės"
+
+msgid "New"
+msgstr "Naujas"
+
+msgid "Privileged"
+msgstr "Privilegijuotas"
+
+msgid "Queues"
+msgstr "Eilės"
+
+msgid "Resolved"
+msgstr "Išspręstas"
+
+msgid "Tickets total"
+msgstr "Iš viso užklausų"
+
+msgid "Total"
+msgstr "Viso"
+
+msgid "Unprivileged"
+msgstr "Neprivilegijuotas"
+
+msgid "Users"
+msgstr "Vartotojai"
+

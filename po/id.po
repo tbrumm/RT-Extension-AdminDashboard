@@ -1,0 +1,47 @@
+# RT-Extension-AdminDashboard - id translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+
+msgid "Active"
+msgstr "Aktif"
+
+msgid "Configuration"
+msgstr "Konfigurasi"
+
+msgid "Custom Fields"
+msgstr "Bidang kustom"
+
+msgid "Deleted"
+msgstr "Dihapus"
+
+msgid "Disabled"
+msgstr "Dinonaktifkan"
+
+msgid "Groups"
+msgstr "Grup"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "Privileged"
+msgstr "Istimewa"
+
+msgid "Queues"
+msgstr "Antrian"
+
+msgid "Resolved"
+msgstr "Diselesaikan"
+
+msgid "Tickets total"
+msgstr "Total tiket"
+
+msgid "Unprivileged"
+msgstr "Tidak istimewa"
+
+msgid "Users"
+msgstr "Pengguna"
+

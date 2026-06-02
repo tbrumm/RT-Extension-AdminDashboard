@@ -1,0 +1,50 @@
+# RT-Extension-AdminDashboard - fi translation
+# Copyright (C) 2026 Torsten Brumm
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+
+msgid "Active"
+msgstr "Aktiivinen"
+
+msgid "Configuration"
+msgstr "Asetukset"
+
+msgid "Custom Fields"
+msgstr "Mukautetut kentät"
+
+msgid "Deleted"
+msgstr "Poistettu"
+
+msgid "Disabled"
+msgstr "Poistettu käytöstä"
+
+msgid "Groups"
+msgstr "Ryhmät"
+
+msgid "New"
+msgstr "Uusi"
+
+msgid "Privileged"
+msgstr "Etuoikeutettu"
+
+msgid "Queues"
+msgstr "Jonot"
+
+msgid "Resolved"
+msgstr "Ratkaistu"
+
+msgid "Tickets total"
+msgstr "Tikettejä yhteensä"
+
+msgid "Total"
+msgstr "Yhteensä"
+
+msgid "Unprivileged"
+msgstr "Ei-etuoikeutettu"
+
+msgid "Users"
+msgstr "Käyttäjät"
+

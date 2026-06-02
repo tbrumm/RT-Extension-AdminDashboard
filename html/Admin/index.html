@@ -139,7 +139,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
       <div class="sc sc--total">
         <i class="bi bi-ticket-perforated-fill sc__bg-icon"></i>
         <div class="sc__val" data-counter="<% $tickets_total %>">0</div>
-        <div class="sc__lbl"><% loc('Tickets gesamt') %></div>
+        <div class="sc__lbl"><% loc('Tickets total') %></div>
       </div>
     </div>
 
@@ -147,7 +147,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
       <div class="sc sc--new">
         <i class="bi bi-inbox-fill sc__bg-icon"></i>
         <div class="sc__val" data-counter="<% $tickets_new %>">0</div>
-        <div class="sc__lbl"><% loc('Neu') %></div>
+        <div class="sc__lbl"><% loc('New') %></div>
       </div>
     </div>
 
@@ -155,7 +155,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
       <div class="sc sc--active">
         <i class="bi bi-arrow-right-circle-fill sc__bg-icon"></i>
         <div class="sc__val" data-counter="<% $tickets_active %>">0</div>
-        <div class="sc__lbl"><% loc('Aktiv') %></div>
+        <div class="sc__lbl"><% loc('Active') %></div>
       </div>
     </div>
 
@@ -163,7 +163,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
       <div class="sc sc--resolved">
         <i class="bi bi-check-circle-fill sc__bg-icon"></i>
         <div class="sc__val" data-counter="<% $tickets_resolved %>">0</div>
-        <div class="sc__lbl"><% loc("Gel\x{f6}st") %></div>
+        <div class="sc__lbl"><% loc('Resolved') %></div>
       </div>
     </div>
 
@@ -171,7 +171,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
       <div class="sc sc--deleted">
         <i class="bi bi-trash3-fill sc__bg-icon"></i>
         <div class="sc__val" data-counter="<% $tickets_deleted %>">0</div>
-        <div class="sc__lbl"><% loc("Gel\x{f6}scht") %></div>
+        <div class="sc__lbl"><% loc('Deleted') %></div>
       </div>
     </div>
 
@@ -182,20 +182,20 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
 
     <div class="col-md-6">
       <div class="ic">
-        <div class="ic__hd"><i class="bi bi-people-fill me-2"></i><% loc('Benutzer') %></div>
+        <div class="ic__hd"><i class="bi bi-people-fill me-2"></i><% loc('Users') %></div>
         <div class="ic__bd">
           <div class="ir">
-            <span class="ir__lbl"><% loc('Privilegiert') %></span>
+            <span class="ir__lbl"><% loc('Privileged') %></span>
             <span class="ir__bar"><span class="ir__fill ir__fill--a" style="width:<% $users_total > 0 ? int(100*$users_privileged/$users_total) : 0 %>%"></span></span>
             <span class="ir__val ir__val--a" data-counter="<% $users_privileged %>">0</span>
           </div>
           <div class="ir">
-            <span class="ir__lbl"><% loc('Unprivilegiert') %></span>
+            <span class="ir__lbl"><% loc('Unprivileged') %></span>
             <span class="ir__bar"><span class="ir__fill ir__fill--b" style="width:<% $users_total > 0 ? int(100*$users_unprivileged/$users_total) : 0 %>%"></span></span>
             <span class="ir__val" data-counter="<% $users_unprivileged %>">0</span>
           </div>
           <div class="ir">
-            <span class="ir__lbl ir__lbl--dim"><% loc('Deaktiviert') %></span>
+            <span class="ir__lbl ir__lbl--dim"><% loc('Disabled') %></span>
             <span class="ir__bar"><span class="ir__fill ir__fill--c" style="width:<% ($users_total+$users_disabled) > 0 ? int(100*$users_disabled/($users_total+$users_disabled)) : 0 %>%"></span></span>
             <span class="ir__val ir__val--dim" data-counter="<% $users_disabled %>">0</span>
           </div>
@@ -205,7 +205,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
 
     <div class="col-md-6">
       <div class="ic">
-        <div class="ic__hd"><i class="bi bi-gear-fill me-2"></i><% loc('Konfiguration') %></div>
+        <div class="ic__hd"><i class="bi bi-gear-fill me-2"></i><% loc('Configuration') %></div>
         <div class="ic__bd">
           <div class="ir">
             <span class="ir__lbl"><% loc('Queues') %></span>
@@ -220,7 +220,7 @@ my @menu_items = grep { defined $_->path && $_->path ne '' }
             <span class="ir__tot">/ <% $cfs_total %></span>
           </div>
           <div class="ir">
-            <span class="ir__lbl"><% loc('Gruppen') %></span>
+            <span class="ir__lbl"><% loc('Groups') %></span>
             <span class="ir__bar"></span>
             <span class="ir__val ir__val--a" data-counter="<% $groups_count %>">0</span>
             <span class="ir__tot">&nbsp;</span>
