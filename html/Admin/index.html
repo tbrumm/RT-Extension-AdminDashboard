@@ -1,46 +1,103 @@
+<%once>
+# Per-process cache - survives across requests in the same fcgid worker.
+# Avoids running 6 queries on every admin page load; stale after 10 min.
+my (%_stats, $_stats_expires);
+my $_CACHE_TTL = 600;
+</%once>
 <%init>
-my $dbh = $RT::Handle->dbh;
-
-my ($queues_total)  = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0");
-my ($queues_active) = $dbh->selectrow_array("SELECT COUNT(*) FROM Queues WHERE id > 0 AND Disabled = 0");
-my ($cfs_total)     = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields");
-my ($cfs_active)    = $dbh->selectrow_array("SELECT COUNT(*) FROM CustomFields WHERE Disabled = 0");
-my ($groups_count)  = $dbh->selectrow_array("SELECT COUNT(*) FROM Groups WHERE Domain = 'UserDefined'");
-
-my ($users_privileged) = $dbh->selectrow_array(
-    "SELECT COUNT(DISTINCT u.id) FROM Users u
-     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
-     JOIN Principals p ON p.id = u.id
-     WHERE cgm.ImmediateParentId = 4 AND p.Disabled = 0 AND u.id > 2"
-);
-my ($users_unprivileged) = $dbh->selectrow_array(
-    "SELECT COUNT(DISTINCT u.id) FROM Users u
-     JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
-     JOIN Principals p ON p.id = u.id
-     WHERE cgm.ImmediateParentId = 5 AND p.Disabled = 0 AND u.id > 2"
-);
-my ($users_disabled) = $dbh->selectrow_array(
-    "SELECT COUNT(*) FROM Principals WHERE Disabled = 1 AND PrincipalType = 'User' AND id > 2"
+my (
+    $queues_total, $queues_active,
+    $cfs_total,    $cfs_active,
+    $groups_count,
+    $users_privileged, $users_unprivileged, $users_disabled,
+    $tickets_new, $tickets_active, $tickets_resolved, $tickets_deleted,
+    $tickets_total, $users_total,
 );
 
-my $status_rows = $dbh->selectall_arrayref(
-    "SELECT Status, COUNT(*) FROM Tickets WHERE id > 0 GROUP BY Status"
-);
-my %by_status;
-$by_status{$_->[0]} = $_->[1] for @$status_rows;
+if ($_stats_expires && time() < $_stats_expires) {
+    # Cache hit
+    ($queues_total, $queues_active)       = @_stats{qw(qt qa)};
+    ($cfs_total,    $cfs_active)          = @_stats{qw(ct ca)};
+    $groups_count                         =  $_stats{g};
+    ($users_privileged, $users_unprivileged, $users_disabled)
+                                          = @_stats{qw(up uu ud)};
+    ($tickets_new, $tickets_active, $tickets_resolved, $tickets_deleted)
+                                          = @_stats{qw(tn ta tr td)};
+} else {
+    # Cache miss - run 6 consolidated queries
+    my $dbh = $RT::Handle->dbh;
 
-my @done_statuses    = qw(resolved rejected done ClosedByHousekeeping on_hold cancelled);
-my $tickets_new      = $by_status{new} // 0;
-my $tickets_deleted  = $by_status{deleted} // 0;
-my $tickets_resolved = 0;
-$tickets_resolved += ($by_status{$_} // 0) for @done_statuses;
-my $tickets_active = 0;
-for my $s (keys %by_status) {
-    next if $s eq 'new' || $s eq 'deleted' || grep { $_ eq $s } @done_statuses;
-    $tickets_active += $by_status{$s};
+    # Queues: one pass, split by Disabled flag
+    my $q_rows = $dbh->selectall_arrayref(
+        "SELECT Disabled, COUNT(*) FROM Queues WHERE id > 0 GROUP BY Disabled"
+    );
+    my %qd; $qd{$_->[0]} = $_->[1] for @$q_rows;
+    $queues_active = $qd{0} // 0;
+    $queues_total  = ($qd{0} // 0) + ($qd{1} // 0);
+
+    # Custom Fields: one pass, split by Disabled flag
+    my $cf_rows = $dbh->selectall_arrayref(
+        "SELECT Disabled, COUNT(*) FROM CustomFields GROUP BY Disabled"
+    );
+    my %cfd; $cfd{$_->[0]} = $_->[1] for @$cf_rows;
+    $cfs_active = $cfd{0} // 0;
+    $cfs_total  = ($cfd{0} // 0) + ($cfd{1} // 0);
+
+    # Groups
+    ($groups_count) = $dbh->selectrow_array(
+        "SELECT COUNT(*) FROM Groups WHERE Domain = 'UserDefined'"
+    );
+
+    # Users priv + unpriv in one JOIN query, split by group id
+    my $u_rows = $dbh->selectall_arrayref(
+        "SELECT cgm.ImmediateParentId, COUNT(DISTINCT u.id)
+         FROM Users u
+         JOIN CachedGroupMembers cgm ON cgm.MemberId = u.id
+         JOIN Principals p ON p.id = u.id
+         WHERE cgm.ImmediateParentId IN (4, 5) AND p.Disabled = 0 AND u.id > 2
+         GROUP BY cgm.ImmediateParentId"
+    );
+    my %ug; $ug{$_->[0]} = $_->[1] for @$u_rows;
+    $users_privileged   = $ug{4} // 0;
+    $users_unprivileged = $ug{5} // 0;
+
+    # Disabled users
+    ($users_disabled) = $dbh->selectrow_array(
+        "SELECT COUNT(*) FROM Principals
+         WHERE Disabled = 1 AND PrincipalType = 'User' AND id > 2"
+    );
+
+    # Tickets by status
+    my $t_rows = $dbh->selectall_arrayref(
+        "SELECT Status, COUNT(*) FROM Tickets WHERE id > 0 GROUP BY Status"
+    );
+    my %by_status; $by_status{$_->[0]} = $_->[1] for @$t_rows;
+
+    my @done = qw(resolved rejected done ClosedByHousekeeping on_hold cancelled);
+    $tickets_new     = $by_status{new}     // 0;
+    $tickets_deleted = $by_status{deleted} // 0;
+    $tickets_resolved = 0;
+    $tickets_resolved += ($by_status{$_} // 0) for @done;
+    $tickets_active = 0;
+    for my $s (keys %by_status) {
+        next if $s eq 'new' || $s eq 'deleted' || grep { $_ eq $s } @done;
+        $tickets_active += $by_status{$s};
+    }
+
+    # Populate cache
+    %_stats = (
+        qt => $queues_total,      qa => $queues_active,
+        ct => $cfs_total,         ca => $cfs_active,
+        g  => $groups_count,
+        up => $users_privileged,  uu => $users_unprivileged, ud => $users_disabled,
+        tn => $tickets_new,       ta => $tickets_active,
+        tr => $tickets_resolved,  td => $tickets_deleted,
+    );
+    $_stats_expires = time() + $_CACHE_TTL;
 }
-my $tickets_total = $tickets_new + $tickets_active + $tickets_resolved + $tickets_deleted;
-my $users_total   = $users_privileged + $users_unprivileged;
+
+$tickets_total = $tickets_new + $tickets_active + $tickets_resolved + $tickets_deleted;
+$users_total   = $users_privileged + $users_unprivileged;
 
 my %icon_map = (
     'Users'        => ['people-fill',                '#2563eb'],
