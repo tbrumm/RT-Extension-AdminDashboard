@@ -1,0 +1,204 @@
+<%init>
+use RT::Queues;
+use RT::CustomFields;
+use RT::Groups;
+use RT::Users;
+use RT::Tickets;
+
+# Queues
+my $queues = RT::Queues->new( $session{CurrentUser} );
+$queues->UnLimit;
+my $queues_total = $queues->Count;
+$queues->Limit( FIELD => 'Disabled', VALUE => 0 );
+my $queues_active = $queues->Count;
+
+# Custom Fields
+my $cfs = RT::CustomFields->new( $session{CurrentUser} );
+$cfs->UnLimit;
+my $cfs_total = $cfs->Count;
+$cfs->Limit( FIELD => 'Disabled', VALUE => 0 );
+my $cfs_active = $cfs->Count;
+
+# User-defined groups (exclude system groups: Privileged, Unprivileged, etc.)
+my $groups = RT::Groups->new( $session{CurrentUser} );
+$groups->LimitToUserDefinedGroups;
+my $groups_count = $groups->Count;
+
+# Users
+my $priv_users = RT::Users->new( $session{CurrentUser} );
+$priv_users->LimitToPrivileged;
+$priv_users->Limit( FIELD => 'Disabled', VALUE => 0 );
+my $users_privileged = $priv_users->Count;
+
+my $unpriv_users = RT::Users->new( $session{CurrentUser} );
+$unpriv_users->LimitToUnprivileged;
+$unpriv_users->Limit( FIELD => 'Disabled', VALUE => 0 );
+my $users_unprivileged = $unpriv_users->Count;
+
+my $disabled_users = RT::Users->new( $session{CurrentUser} );
+$disabled_users->UnLimit;
+$disabled_users->Limit( FIELD => 'Disabled', VALUE => 1 );
+my $users_disabled = $disabled_users->Count;
+
+# Tickets — query via DB for performance; exclude system pseudo-tickets (id<1)
+my $dbh = $RT::Handle->dbh;
+
+my %ticket_counts;
+
+# Total (all non-deleted)
+($ticket_counts{total}) = $dbh->selectrow_array(
+    "SELECT COUNT(*) FROM Tickets WHERE id > 0 AND Status != 'deleted'"
+);
+
+# By status (including deleted)
+my $rows = $dbh->selectall_arrayref(
+    "SELECT Status, COUNT(*) FROM Tickets WHERE id > 0 GROUP BY Status"
+);
+my %by_status;
+for my $row (@$rows) {
+    $by_status{ $row->[0] } = $row->[1];
+}
+
+$ticket_counts{new}     = $by_status{new} // 0;
+$ticket_counts{deleted} = $by_status{deleted} // 0;
+
+# resolved/rejected: all "done" statuses
+my @done_statuses = qw(resolved rejected done ClosedByHousekeeping on_hold cancelled);
+$ticket_counts{resolved} = 0;
+$ticket_counts{resolved} += ($by_status{$_} // 0) for @done_statuses;
+
+# active: everything that's not new, not done, not deleted
+$ticket_counts{active} = 0;
+for my $status (keys %by_status) {
+    next if $status eq 'new';
+    next if $status eq 'deleted';
+    next if grep { $_ eq $status } @done_statuses;
+    $ticket_counts{active} += $by_status{$status};
+}
+</%init>
+<&| /Widgets/TitleBox, title => loc('RT Interna') &>
+<div class="admin-dashboard-stats">
+
+  <div class="stats-section">
+    <h4><% loc('Konfiguration') %></h4>
+    <table class="stats-table">
+      <tr>
+        <td class="stat-label"><% loc('Queues') %></td>
+        <td class="stat-value"><% $queues_active %></td>
+        <td class="stat-sub">/ <% $queues_total %> <% loc('gesamt') %></td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Custom Fields') %></td>
+        <td class="stat-value"><% $cfs_active %></td>
+        <td class="stat-sub">/ <% $cfs_total %> <% loc('gesamt') %></td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Gruppen') %></td>
+        <td class="stat-value"><% $groups_count %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="stats-section">
+    <h4><% loc('Benutzer') %></h4>
+    <table class="stats-table">
+      <tr>
+        <td class="stat-label"><% loc('Privilegiert') %></td>
+        <td class="stat-value"><% $users_privileged %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Unprivilegiert') %></td>
+        <td class="stat-value"><% $users_unprivileged %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Deaktiviert') %></td>
+        <td class="stat-value stat-muted"><% $users_disabled %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="stats-section">
+    <h4><% loc('Tickets') %></h4>
+    <table class="stats-table">
+      <tr>
+        <td class="stat-label"><% loc('Gesamt') %></td>
+        <td class="stat-value"><% $ticket_counts{total} %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Neu') %></td>
+        <td class="stat-value stat-new"><% $ticket_counts{new} %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Aktiv') %></td>
+        <td class="stat-value stat-active"><% $ticket_counts{active} %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Gel\x{f6}st/Abgelehnt') %></td>
+        <td class="stat-value stat-resolved"><% $ticket_counts{resolved} %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="stat-label"><% loc('Gel\x{f6}scht') %></td>
+        <td class="stat-value stat-muted"><% $ticket_counts{deleted} %></td>
+        <td class="stat-sub">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+</&>
+
+<style>
+.admin-dashboard-stats {
+    font-size: 0.9em;
+}
+.stats-section {
+    margin-bottom: 1em;
+}
+.stats-section h4 {
+    margin: 0 0 0.3em 0;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.2em;
+}
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.stats-table tr:hover {
+    background: rgba(0,0,0,0.03);
+}
+.stat-label {
+    padding: 0.15em 0.5em 0.15em 0;
+    color: #555;
+    width: 55%;
+}
+.stat-value {
+    padding: 0.15em 0.3em;
+    font-weight: bold;
+    text-align: right;
+    width: 20%;
+}
+.stat-sub {
+    padding: 0.15em 0 0.15em 0.3em;
+    color: #999;
+    font-size: 0.85em;
+    width: 25%;
+}
+.stat-new    { color: #d97706; }
+.stat-active { color: #2563eb; }
+.stat-resolved { color: #16a34a; }
+.stat-muted  { color: #9ca3af; }
+</style>
+
+% $m->callback( CallbackName => 'AfterRTPortal', ARGSRef => \%ARGS );
