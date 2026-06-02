@@ -1,10 +1,10 @@
+use lib '.';
 use inc::Module::Install;
+
 RTx('RT-Extension-AdminDashboard');
 license('gpl_2');
 author('Torsten Brumm');
-version_from('lib/RT/Extension/AdminDashboard.pm');
 requires_rt('5.0.0');
 rt_too_new('7.0.0');
-auto_manifest();
 sign(0);
 WriteAll();
