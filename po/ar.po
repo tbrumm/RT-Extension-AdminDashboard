@@ -18,6 +18,9 @@ msgstr "مُخصَّص"
 msgid "Articles total"
 msgstr "إجمالي المقالات"
 
+msgid "Asset Fields"
+msgstr "حقول الأصول"
+
 msgid "Assets total"
 msgstr "إجمالي الأصول"
 
@@ -32,6 +35,12 @@ msgstr "الإعدادات"
 
 msgid "Custom Fields"
 msgstr "الحقول المخصصة"
+
+msgid "Custom Fields by Object Type"
+msgstr "الحقول المخصصة حسب نوع الكائن"
+
+msgid "Custom Fields total"
+msgstr "إجمالي الحقول المخصصة"
 
 msgid "Database Size (MB)"
 msgstr "حجم قاعدة البيانات (ميغابايت)"
@@ -60,6 +69,9 @@ msgstr "جديد"
 msgid "Other"
 msgstr "أخرى"
 
+msgid "Other Fields"
+msgstr "حقول أخرى"
+
 msgid "Privileged"
 msgstr "متميز"
 
@@ -74,6 +86,9 @@ msgstr "محلول"
 
 msgid "Scrips total"
 msgstr "إجمالي السكريبتات"
+
+msgid "Ticket Fields"
+msgstr "حقول التذاكر"
 
 msgid "Tickets total"
 msgstr "إجمالي التذاكر"

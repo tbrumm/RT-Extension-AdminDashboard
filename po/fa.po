@@ -18,6 +18,9 @@ msgstr "تخصیص‌یافته"
 msgid "Articles total"
 msgstr "مجموع مقالات"
 
+msgid "Asset Fields"
+msgstr "فیلدهای دارایی"
+
 msgid "Assets total"
 msgstr "مجموع دارایی‌ها"
 
@@ -32,6 +35,12 @@ msgstr "پیکربندی"
 
 msgid "Custom Fields"
 msgstr "فیلدهای سفارشی"
+
+msgid "Custom Fields by Object Type"
+msgstr "فیلدهای سفارشی بر اساس نوع شیء"
+
+msgid "Custom Fields total"
+msgstr "مجموع فیلدهای سفارشی"
 
 msgid "Database Size (MB)"
 msgstr "اندازه پایگاه داده (مگابایت)"
@@ -60,6 +69,9 @@ msgstr "جدید"
 msgid "Other"
 msgstr "سایر"
 
+msgid "Other Fields"
+msgstr "سایر فیلدها"
+
 msgid "Privileged"
 msgstr "دارای امتیاز"
 
@@ -74,6 +86,9 @@ msgstr "حل شده"
 
 msgid "Scrips total"
 msgstr "مجموع اسکریپت‌ها"
+
+msgid "Ticket Fields"
+msgstr "فیلدهای درخواست"
 
 msgid "Tickets total"
 msgstr "مجموع درخواست‌ها"

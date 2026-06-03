@@ -18,6 +18,9 @@ msgstr "Tildelt"
 msgid "Articles total"
 msgstr "Artikler i alt"
 
+msgid "Asset Fields"
+msgstr "Aktivfelter"
+
 msgid "Assets total"
 msgstr "Aktiver i alt"
 
@@ -32,6 +35,12 @@ msgstr "Konfiguration"
 
 msgid "Custom Fields"
 msgstr "Brugerdefinerede felter"
+
+msgid "Custom Fields by Object Type"
+msgstr "Brugerdefinerede felter efter objekttype"
+
+msgid "Custom Fields total"
+msgstr "Brugerdefinerede felter i alt"
 
 msgid "Database Size (MB)"
 msgstr "Databasestørrelse (MB)"
@@ -60,6 +69,9 @@ msgstr "Ny"
 msgid "Other"
 msgstr "Andet"
 
+msgid "Other Fields"
+msgstr "Andre felter"
+
 msgid "Privileged"
 msgstr "Privilegeret"
 
@@ -74,6 +86,9 @@ msgstr "Løst"
 
 msgid "Scrips total"
 msgstr "Scrips i alt"
+
+msgid "Ticket Fields"
+msgstr "Sagsfelter"
 
 msgid "Tickets total"
 msgstr "Sager i alt"

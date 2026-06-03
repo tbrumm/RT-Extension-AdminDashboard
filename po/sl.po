@@ -18,6 +18,9 @@ msgstr "Dodeljeno"
 msgid "Articles total"
 msgstr "Skupaj člankov"
 
+msgid "Asset Fields"
+msgstr "Polja sredstev"
+
 msgid "Assets total"
 msgstr "Skupaj sredstev"
 
@@ -32,6 +35,12 @@ msgstr "Konfiguracija"
 
 msgid "Custom Fields"
 msgstr "Polja po meri"
+
+msgid "Custom Fields by Object Type"
+msgstr "Polja po meri glede na vrsto predmeta"
+
+msgid "Custom Fields total"
+msgstr "Skupaj polj po meri"
 
 msgid "Database Size (MB)"
 msgstr "Velikost baze podatkov (MB)"
@@ -60,6 +69,9 @@ msgstr "Novo"
 msgid "Other"
 msgstr "Drugo"
 
+msgid "Other Fields"
+msgstr "Druga polja"
+
 msgid "Privileged"
 msgstr "Privilegiran"
 
@@ -74,6 +86,9 @@ msgstr "Rešeno"
 
 msgid "Scrips total"
 msgstr "Skupaj skriptov"
+
+msgid "Ticket Fields"
+msgstr "Polja zahtevkov"
 
 msgid "Tickets total"
 msgstr "Skupaj zahtevkov"

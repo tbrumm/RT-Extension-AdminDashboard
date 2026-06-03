@@ -18,6 +18,9 @@ msgstr "Assignat"
 msgid "Articles total"
 msgstr "Total d'articles"
 
+msgid "Asset Fields"
+msgstr "Camps d'actius"
+
 msgid "Assets total"
 msgstr "Total d'actius"
 
@@ -32,6 +35,12 @@ msgstr "Configuració"
 
 msgid "Custom Fields"
 msgstr "Camps personalitzats"
+
+msgid "Custom Fields by Object Type"
+msgstr "Camps personalitzats per tipus d'objecte"
+
+msgid "Custom Fields total"
+msgstr "Total de camps personalitzats"
 
 msgid "Database Size (MB)"
 msgstr "Mida de la base de dades (MB)"
@@ -60,6 +69,9 @@ msgstr "Nou"
 msgid "Other"
 msgstr "Altres"
 
+msgid "Other Fields"
+msgstr "Altres camps"
+
 msgid "Privileged"
 msgstr "Privilegiat"
 
@@ -74,6 +86,9 @@ msgstr "Resolt"
 
 msgid "Scrips total"
 msgstr "Total de scrips"
+
+msgid "Ticket Fields"
+msgstr "Camps de tiquet"
 
 msgid "Tickets total"
 msgstr "Total de tiquets"

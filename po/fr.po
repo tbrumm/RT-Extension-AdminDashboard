@@ -18,6 +18,9 @@ msgstr "Attribué"
 msgid "Articles total"
 msgstr "Total des articles"
 
+msgid "Asset Fields"
+msgstr "Champs des ressources"
+
 msgid "Assets total"
 msgstr "Total des ressources"
 
@@ -29,6 +32,12 @@ msgstr "Total des classes"
 
 msgid "Custom Fields"
 msgstr "Champs personnalisés"
+
+msgid "Custom Fields by Object Type"
+msgstr "Champs personnalisés par type d'objet"
+
+msgid "Custom Fields total"
+msgstr "Total des champs personnalisés"
 
 msgid "Database Size (MB)"
 msgstr "Taille de la base de données (Mo)"
@@ -57,6 +66,9 @@ msgstr "Nouveau"
 msgid "Other"
 msgstr "Autre"
 
+msgid "Other Fields"
+msgstr "Autres champs"
+
 msgid "Privileged"
 msgstr "Privilégié"
 
@@ -71,6 +83,9 @@ msgstr "Résolu"
 
 msgid "Scrips total"
 msgstr "Total des scrips"
+
+msgid "Ticket Fields"
+msgstr "Champs des tickets"
 
 msgid "Tickets total"
 msgstr "Total des tickets"

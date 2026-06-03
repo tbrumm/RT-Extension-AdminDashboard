@@ -18,6 +18,9 @@ msgstr "Toegewezen"
 msgid "Articles total"
 msgstr "Totaal artikelen"
 
+msgid "Asset Fields"
+msgstr "Activavelden"
+
 msgid "Assets total"
 msgstr "Totaal assets"
 
@@ -32,6 +35,12 @@ msgstr "Configuratie"
 
 msgid "Custom Fields"
 msgstr "Aangepaste velden"
+
+msgid "Custom Fields by Object Type"
+msgstr "Aangepaste velden per objecttype"
+
+msgid "Custom Fields total"
+msgstr "Totaal aangepaste velden"
 
 msgid "Database Size (MB)"
 msgstr "Databasegrootte (MB)"
@@ -60,6 +69,9 @@ msgstr "Nieuw"
 msgid "Other"
 msgstr "Overig"
 
+msgid "Other Fields"
+msgstr "Overige velden"
+
 msgid "Privileged"
 msgstr "Geprivilegieerd"
 
@@ -74,6 +86,9 @@ msgstr "Opgelost"
 
 msgid "Scrips total"
 msgstr "Totaal scrips"
+
+msgid "Ticket Fields"
+msgstr "Ticketvelden"
 
 msgid "Tickets total"
 msgstr "Totaal tickets"

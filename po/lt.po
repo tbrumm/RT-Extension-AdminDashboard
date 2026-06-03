@@ -18,6 +18,9 @@ msgstr "Paskirta"
 msgid "Articles total"
 msgstr "Iš viso straipsnių"
 
+msgid "Asset Fields"
+msgstr "Turto laukai"
+
 msgid "Assets total"
 msgstr "Iš viso turto"
 
@@ -32,6 +35,12 @@ msgstr "Konfigūracija"
 
 msgid "Custom Fields"
 msgstr "Pasirinktiniai laukai"
+
+msgid "Custom Fields by Object Type"
+msgstr "Pasirinktiniai laukai pagal objekto tipą"
+
+msgid "Custom Fields total"
+msgstr "Iš viso pasirinktinių laukų"
 
 msgid "Database Size (MB)"
 msgstr "Duomenų bazės dydis (MB)"
@@ -60,6 +69,9 @@ msgstr "Naujas"
 msgid "Other"
 msgstr "Kita"
 
+msgid "Other Fields"
+msgstr "Kiti laukai"
+
 msgid "Privileged"
 msgstr "Privilegijuotas"
 
@@ -74,6 +86,9 @@ msgstr "Išspręstas"
 
 msgid "Scrips total"
 msgstr "Iš viso skriptų"
+
+msgid "Ticket Fields"
+msgstr "Užklausų laukai"
 
 msgid "Tickets total"
 msgstr "Iš viso užklausų"

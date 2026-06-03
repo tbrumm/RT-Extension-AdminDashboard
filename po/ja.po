@@ -18,6 +18,9 @@ msgstr "割り当て済み"
 msgid "Articles total"
 msgstr "記事合計"
 
+msgid "Asset Fields"
+msgstr "Assetフィールド"
+
 msgid "Assets total"
 msgstr "Asset合計"
 
@@ -32,6 +35,12 @@ msgstr "設定"
 
 msgid "Custom Fields"
 msgstr "カスタムフィールド"
+
+msgid "Custom Fields by Object Type"
+msgstr "オブジェクトタイプ別カスタムフィールド"
+
+msgid "Custom Fields total"
+msgstr "カスタムフィールド合計"
 
 msgid "Database Size (MB)"
 msgstr "データベースサイズ (MB)"
@@ -60,6 +69,9 @@ msgstr "新規"
 msgid "Other"
 msgstr "その他"
 
+msgid "Other Fields"
+msgstr "その他のフィールド"
+
 msgid "Privileged"
 msgstr "特権ユーザー"
 
@@ -74,6 +86,9 @@ msgstr "解決済み"
 
 msgid "Scrips total"
 msgstr "Scrip合計"
+
+msgid "Ticket Fields"
+msgstr "チケットフィールド"
 
 msgid "Tickets total"
 msgstr "チケット合計"

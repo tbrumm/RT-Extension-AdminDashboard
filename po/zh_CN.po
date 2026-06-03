@@ -18,6 +18,9 @@ msgstr "已分配"
 msgid "Articles total"
 msgstr "文章总数"
 
+msgid "Asset Fields"
+msgstr "Asset字段"
+
 msgid "Assets total"
 msgstr "Asset总数"
 
@@ -32,6 +35,12 @@ msgstr "配置"
 
 msgid "Custom Fields"
 msgstr "自定义字段"
+
+msgid "Custom Fields by Object Type"
+msgstr "按对象类型分类的自定义字段"
+
+msgid "Custom Fields total"
+msgstr "自定义字段总数"
 
 msgid "Database Size (MB)"
 msgstr "数据库大小 (MB)"
@@ -60,6 +69,9 @@ msgstr "新建"
 msgid "Other"
 msgstr "其他"
 
+msgid "Other Fields"
+msgstr "其他字段"
+
 msgid "Privileged"
 msgstr "特权用户"
 
@@ -74,6 +86,9 @@ msgstr "已解决"
 
 msgid "Scrips total"
 msgstr "Scrip总数"
+
+msgid "Ticket Fields"
+msgstr "工单字段"
 
 msgid "Tickets total"
 msgstr "工单总数"

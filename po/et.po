@@ -18,6 +18,9 @@ msgstr "Eraldatud"
 msgid "Articles total"
 msgstr "Artikleid kokku"
 
+msgid "Asset Fields"
+msgstr "Vara väljad"
+
 msgid "Assets total"
 msgstr "Varasid kokku"
 
@@ -32,6 +35,12 @@ msgstr "Seaded"
 
 msgid "Custom Fields"
 msgstr "Kohandatud väljad"
+
+msgid "Custom Fields by Object Type"
+msgstr "Kohandatud väljad objektitüübi järgi"
+
+msgid "Custom Fields total"
+msgstr "Kohandatud välju kokku"
 
 msgid "Database Size (MB)"
 msgstr "Andmebaasi suurus (MB)"
@@ -60,6 +69,9 @@ msgstr "Uus"
 msgid "Other"
 msgstr "Muu"
 
+msgid "Other Fields"
+msgstr "Muud väljad"
+
 msgid "Privileged"
 msgstr "Privilegeeritud"
 
@@ -74,6 +86,9 @@ msgstr "Lahendatud"
 
 msgid "Scrips total"
 msgstr "Skripte kokku"
+
+msgid "Ticket Fields"
+msgstr "Pileti väljad"
 
 msgid "Tickets total"
 msgstr "Pileteid kokku"

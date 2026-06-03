@@ -18,6 +18,9 @@ msgstr "Przydzielony"
 msgid "Articles total"
 msgstr "Łącznie artykułów"
 
+msgid "Asset Fields"
+msgstr "Pola zasobów"
+
 msgid "Assets total"
 msgstr "Łącznie zasobów"
 
@@ -32,6 +35,12 @@ msgstr "Konfiguracja"
 
 msgid "Custom Fields"
 msgstr "Pola niestandardowe"
+
+msgid "Custom Fields by Object Type"
+msgstr "Pola niestandardowe według typu obiektu"
+
+msgid "Custom Fields total"
+msgstr "Łącznie pól niestandardowych"
 
 msgid "Database Size (MB)"
 msgstr "Rozmiar bazy danych (MB)"
@@ -60,6 +69,9 @@ msgstr "Nowy"
 msgid "Other"
 msgstr "Inne"
 
+msgid "Other Fields"
+msgstr "Inne pola"
+
 msgid "Privileged"
 msgstr "Uprzywilejowany"
 
@@ -74,6 +86,9 @@ msgstr "Rozwiązany"
 
 msgid "Scrips total"
 msgstr "Łącznie skryptów"
+
+msgid "Ticket Fields"
+msgstr "Pola zgłoszeń"
 
 msgid "Tickets total"
 msgstr "Łącznie zgłoszeń"

@@ -18,6 +18,9 @@ msgstr "Přiděleno"
 msgid "Articles total"
 msgstr "Celkem článků"
 
+msgid "Asset Fields"
+msgstr "Pole aktiv"
+
 msgid "Assets total"
 msgstr "Celkem aktiv"
 
@@ -32,6 +35,12 @@ msgstr "Konfigurace"
 
 msgid "Custom Fields"
 msgstr "Vlastní pole"
+
+msgid "Custom Fields by Object Type"
+msgstr "Vlastní pole podle typu objektu"
+
+msgid "Custom Fields total"
+msgstr "Celkem vlastních polí"
 
 msgid "Database Size (MB)"
 msgstr "Velikost databáze (MB)"
@@ -60,6 +69,9 @@ msgstr "Nový"
 msgid "Other"
 msgstr "Ostatní"
 
+msgid "Other Fields"
+msgstr "Ostatní pole"
+
 msgid "Privileged"
 msgstr "Privilegovaný"
 
@@ -74,6 +86,9 @@ msgstr "Vyřešeno"
 
 msgid "Scrips total"
 msgstr "Celkem skriptů"
+
+msgid "Ticket Fields"
+msgstr "Pole požadavků"
 
 msgid "Tickets total"
 msgstr "Celkem požadavků"

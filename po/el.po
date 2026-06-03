@@ -18,6 +18,9 @@ msgstr "Εκχωρημένο"
 msgid "Articles total"
 msgstr "Σύνολο άρθρων"
 
+msgid "Asset Fields"
+msgstr "Πεδία περιουσιακών στοιχείων"
+
 msgid "Assets total"
 msgstr "Σύνολο περιουσιακών στοιχείων"
 
@@ -32,6 +35,12 @@ msgstr "Ρυθμίσεις"
 
 msgid "Custom Fields"
 msgstr "Προσαρμοσμένα πεδία"
+
+msgid "Custom Fields by Object Type"
+msgstr "Προσαρμοσμένα πεδία ανά τύπο αντικειμένου"
+
+msgid "Custom Fields total"
+msgstr "Σύνολο προσαρμοσμένων πεδίων"
 
 msgid "Database Size (MB)"
 msgstr "Μέγεθος βάσης δεδομένων (MB)"
@@ -60,6 +69,9 @@ msgstr "Νέο"
 msgid "Other"
 msgstr "Άλλο"
 
+msgid "Other Fields"
+msgstr "Άλλα πεδία"
+
 msgid "Privileged"
 msgstr "Προνομιούχος"
 
@@ -74,6 +86,9 @@ msgstr "Επιλύθηκε"
 
 msgid "Scrips total"
 msgstr "Σύνολο scrips"
+
+msgid "Ticket Fields"
+msgstr "Πεδία αιτημάτων"
 
 msgid "Tickets total"
 msgstr "Σύνολο αιτημάτων"

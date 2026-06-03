@@ -18,6 +18,9 @@ msgstr "Разпределен"
 msgid "Articles total"
 msgstr "Общо статии"
 
+msgid "Asset Fields"
+msgstr "Полета за активи"
+
 msgid "Assets total"
 msgstr "Общо активи"
 
@@ -32,6 +35,12 @@ msgstr "Конфигурация"
 
 msgid "Custom Fields"
 msgstr "Потребителски полета"
+
+msgid "Custom Fields by Object Type"
+msgstr "Потребителски полета по тип обект"
+
+msgid "Custom Fields total"
+msgstr "Общо потребителски полета"
 
 msgid "Database Size (MB)"
 msgstr "Размер на базата данни (МБ)"
@@ -60,6 +69,9 @@ msgstr "Нов"
 msgid "Other"
 msgstr "Друго"
 
+msgid "Other Fields"
+msgstr "Други полета"
+
 msgid "Privileged"
 msgstr "Привилегирован"
 
@@ -74,6 +86,9 @@ msgstr "Решен"
 
 msgid "Scrips total"
 msgstr "Общо скриптове"
+
+msgid "Ticket Fields"
+msgstr "Полета за заявки"
 
 msgid "Tickets total"
 msgstr "Общо заявки"

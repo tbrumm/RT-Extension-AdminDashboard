@@ -18,6 +18,9 @@ msgstr "Tildelt"
 msgid "Articles total"
 msgstr "Totalt artiklar"
 
+msgid "Asset Fields"
+msgstr "Aktivafelt"
+
 msgid "Assets total"
 msgstr "Totalt eigedelar"
 
@@ -32,6 +35,12 @@ msgstr "Konfigurasjon"
 
 msgid "Custom Fields"
 msgstr "Eigendefinerte felt"
+
+msgid "Custom Fields by Object Type"
+msgstr "Eigendefinerte felt etter objekttype"
+
+msgid "Custom Fields total"
+msgstr "Eigendefinerte felt totalt"
 
 msgid "Database Size (MB)"
 msgstr "Databasestorleik (MB)"
@@ -60,6 +69,9 @@ msgstr "Ny"
 msgid "Other"
 msgstr "Anna"
 
+msgid "Other Fields"
+msgstr "Andre felt"
+
 msgid "Privileged"
 msgstr "Privilegert"
 
@@ -74,6 +86,9 @@ msgstr "Løyst"
 
 msgid "Scrips total"
 msgstr "Totalt scrips"
+
+msgid "Ticket Fields"
+msgstr "Saksfelt"
 
 msgid "Tickets total"
 msgstr "Totalt tal saker"

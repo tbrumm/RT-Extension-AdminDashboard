@@ -18,6 +18,9 @@ msgstr "Úthlutað"
 msgid "Articles total"
 msgstr "Greinar alls"
 
+msgid "Asset Fields"
+msgstr "Eignasvæði"
+
 msgid "Assets total"
 msgstr "Eignir alls"
 
@@ -32,6 +35,12 @@ msgstr "Stillingar"
 
 msgid "Custom Fields"
 msgstr "Sérsniðin svæði"
+
+msgid "Custom Fields by Object Type"
+msgstr "Sérsniðin svæði eftir hlutategund"
+
+msgid "Custom Fields total"
+msgstr "Sérsniðin svæði alls"
 
 msgid "Database Size (MB)"
 msgstr "Stærð gagnagrunns (MB)"
@@ -60,6 +69,9 @@ msgstr "Nýtt"
 msgid "Other"
 msgstr "Annað"
 
+msgid "Other Fields"
+msgstr "Önnur svæði"
+
 msgid "Privileged"
 msgstr "Forréttindanotandi"
 
@@ -74,6 +86,9 @@ msgstr "Leyst"
 
 msgid "Scrips total"
 msgstr "Scrips alls"
+
+msgid "Ticket Fields"
+msgstr "Málssvæði"
 
 msgid "Tickets total"
 msgstr "Mál alls"
