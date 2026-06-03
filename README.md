@@ -11,6 +11,7 @@ responsive icon-grid navigation.
 |---|---|
 | `/Admin/` | Main admin overview |
 | `/Admin/Global/` | Global configuration overview |
+| `/Admin/Global/CustomFields/` | Global custom field configuration |
 | `/Admin/Articles/index.html` | Article administration overview |
 | `/Admin/Assets/` | Asset administration overview |
 | `/Admin/Tools/` | System tools overview |
@@ -32,6 +33,9 @@ responsive icon-grid navigation.
 ### Tools — `/Admin/Tools/`
 ![System Tools](docs/screenshot-tools.png)
 
+### Custom Fields — `/Admin/Global/CustomFields/`
+![Global custom field configuration](docs/screenshot-customfields.png)
+
 ## Features
 
 - **Animated stat cards** — key numbers count up on page load; all numbers
@@ -51,6 +55,9 @@ responsive icon-grid navigation.
     counts (active vs. disabled)
   - *Tools*: database size (MB), custom roles, scheduled processes,
     mail error count
+  - *Global/CustomFields*: total CFs, ticket fields, asset fields, other
+    fields; breakdown by object type (tickets, assets, users, articles,
+    transactions) with progress bars
 - **10-minute per-process cache** — all stats queries run once per fcgid
   worker every 10 minutes; no ORM timeouts
 - **Dark-mode and theme-aware** — Bootstrap 5 CSS variables throughout;
@@ -107,6 +114,7 @@ by all dashboard pages.
 | `html/Admin/Articles/index.html` | Article administration dashboard |
 | `html/Admin/Assets/index.html` | Asset administration dashboard |
 | `html/Admin/Tools/index.html` | System tools dashboard |
+| `html/Admin/Global/CustomFields/index.html` | Custom field configuration dashboard |
 | `html/Admin/Elements/AdminDashboardCSS` | Shared CSS (cards, bars, grid) |
 | `html/Admin/Elements/AdminDashboardJS` | Shared counter animation JS |
 | `html/Admin/Elements/Portal` | Widget-only fallback (legacy) |
