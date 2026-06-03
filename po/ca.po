@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Actiu"
 
+msgid "Active Classes"
+msgstr "Classes actives"
+
+msgid "Allocated"
+msgstr "Assignat"
+
+msgid "Articles total"
+msgstr "Total d'articles"
+
+msgid "Assets total"
+msgstr "Total d'actius"
+
+msgid "Catalogs total"
+msgstr "Total de catàlegs"
+
+msgid "Classes total"
+msgstr "Total de classes"
+
 msgid "Configuration"
 msgstr "Configuració"
 
 msgid "Custom Fields"
 msgstr "Camps personalitzats"
+
+msgid "Database Size (MB)"
+msgstr "Mida de la base de dades (MB)"
 
 msgid "Deleted"
 msgstr "Eliminat"
@@ -21,20 +42,38 @@ msgstr "Eliminat"
 msgid "Disabled"
 msgstr "Desactivat"
 
+msgid "Global Scrips"
+msgstr "Scrips globals"
+
 msgid "Groups"
 msgstr "Grups"
+
+msgid "In Use"
+msgstr "En ús"
+
+msgid "Mail Errors"
+msgstr "Errors de correu"
 
 msgid "New"
 msgstr "Nou"
 
+msgid "Other"
+msgstr "Altres"
+
 msgid "Privileged"
 msgstr "Privilegiat"
+
+msgid "Queue-specific"
+msgstr "Específic de cua"
 
 msgid "Queues"
 msgstr "Cues"
 
 msgid "Resolved"
 msgstr "Resolt"
+
+msgid "Scrips total"
+msgstr "Total de scrips"
 
 msgid "Tickets total"
 msgstr "Total de tiquets"

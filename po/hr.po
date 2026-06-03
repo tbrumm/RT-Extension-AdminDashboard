@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktivan"
 
+msgid "Active Classes"
+msgstr "Aktivne klase"
+
+msgid "Allocated"
+msgstr "Dodijeljeno"
+
+msgid "Articles total"
+msgstr "Ukupno članaka"
+
+msgid "Assets total"
+msgstr "Ukupno imovine"
+
+msgid "Catalogs total"
+msgstr "Ukupno kataloga"
+
+msgid "Classes total"
+msgstr "Ukupno klasa"
+
 msgid "Configuration"
 msgstr "Konfiguracija"
 
 msgid "Custom Fields"
 msgstr "Prilagođena polja"
+
+msgid "Database Size (MB)"
+msgstr "Veličina baze podataka (MB)"
 
 msgid "Deleted"
 msgstr "Obrisano"
@@ -21,20 +42,38 @@ msgstr "Obrisano"
 msgid "Disabled"
 msgstr "Onemogućeno"
 
+msgid "Global Scrips"
+msgstr "Globalni scrips"
+
 msgid "Groups"
 msgstr "Grupe"
+
+msgid "In Use"
+msgstr "U upotrebi"
+
+msgid "Mail Errors"
+msgstr "Greške pošte"
 
 msgid "New"
 msgstr "Novo"
 
+msgid "Other"
+msgstr "Ostalo"
+
 msgid "Privileged"
 msgstr "Privilegiran"
+
+msgid "Queue-specific"
+msgstr "Specifičan za red"
 
 msgid "Queues"
 msgstr "Redovi"
 
 msgid "Resolved"
 msgstr "Riješeno"
+
+msgid "Scrips total"
+msgstr "Ukupno scrips"
 
 msgid "Tickets total"
 msgstr "Ukupno zahtjeva"

@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktīvs"
 
+msgid "Active Classes"
+msgstr "Aktīvās klases"
+
+msgid "Allocated"
+msgstr "Piešķirts"
+
+msgid "Articles total"
+msgstr "Rakstu kopskaits"
+
+msgid "Assets total"
+msgstr "Aktīvu kopskaits"
+
+msgid "Catalogs total"
+msgstr "Katalogu kopskaits"
+
+msgid "Classes total"
+msgstr "Klašu kopskaits"
+
 msgid "Configuration"
 msgstr "Konfigurācija"
 
 msgid "Custom Fields"
 msgstr "Pielāgotie lauki"
+
+msgid "Database Size (MB)"
+msgstr "Datu bāzes izmērs (MB)"
 
 msgid "Deleted"
 msgstr "Dzēsts"
@@ -21,20 +42,38 @@ msgstr "Dzēsts"
 msgid "Disabled"
 msgstr "Atspējots"
 
+msgid "Global Scrips"
+msgstr "Globālie skripti"
+
 msgid "Groups"
 msgstr "Grupas"
+
+msgid "In Use"
+msgstr "Lietošanā"
+
+msgid "Mail Errors"
+msgstr "Pasta kļūdas"
 
 msgid "New"
 msgstr "Jauns"
 
+msgid "Other"
+msgstr "Citi"
+
 msgid "Privileged"
 msgstr "Privileģēts"
+
+msgid "Queue-specific"
+msgstr "Rindai specifisks"
 
 msgid "Queues"
 msgstr "Rindas"
 
 msgid "Resolved"
 msgstr "Atrisināts"
+
+msgid "Scrips total"
+msgstr "Skriptu kopskaits"
 
 msgid "Tickets total"
 msgstr "Pieteikumu kopskaits"

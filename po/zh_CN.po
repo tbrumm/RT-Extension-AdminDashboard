@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "活跃"
 
+msgid "Active Classes"
+msgstr "活跃类别"
+
+msgid "Allocated"
+msgstr "已分配"
+
+msgid "Articles total"
+msgstr "文章总数"
+
+msgid "Assets total"
+msgstr "Asset总数"
+
+msgid "Catalogs total"
+msgstr "目录总数"
+
+msgid "Classes total"
+msgstr "类别总数"
+
 msgid "Configuration"
 msgstr "配置"
 
 msgid "Custom Fields"
 msgstr "自定义字段"
+
+msgid "Database Size (MB)"
+msgstr "数据库大小 (MB)"
 
 msgid "Deleted"
 msgstr "已删除"
@@ -21,20 +42,38 @@ msgstr "已删除"
 msgid "Disabled"
 msgstr "已禁用"
 
+msgid "Global Scrips"
+msgstr "全局Scrip"
+
 msgid "Groups"
 msgstr "组"
+
+msgid "In Use"
+msgstr "使用中"
+
+msgid "Mail Errors"
+msgstr "邮件错误"
 
 msgid "New"
 msgstr "新建"
 
+msgid "Other"
+msgstr "其他"
+
 msgid "Privileged"
 msgstr "特权用户"
+
+msgid "Queue-specific"
+msgstr "队列专属"
 
 msgid "Queues"
 msgstr "队列"
 
 msgid "Resolved"
 msgstr "已解决"
+
+msgid "Scrips total"
+msgstr "Scrip总数"
 
 msgid "Tickets total"
 msgstr "工单总数"

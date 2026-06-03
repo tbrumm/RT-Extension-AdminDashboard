@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktiivne"
 
+msgid "Active Classes"
+msgstr "Aktiivsed klassid"
+
+msgid "Allocated"
+msgstr "Eraldatud"
+
+msgid "Articles total"
+msgstr "Artikleid kokku"
+
+msgid "Assets total"
+msgstr "Varasid kokku"
+
+msgid "Catalogs total"
+msgstr "Katalooge kokku"
+
+msgid "Classes total"
+msgstr "Klasse kokku"
+
 msgid "Configuration"
 msgstr "Seaded"
 
 msgid "Custom Fields"
 msgstr "Kohandatud väljad"
+
+msgid "Database Size (MB)"
+msgstr "Andmebaasi suurus (MB)"
 
 msgid "Deleted"
 msgstr "Kustutatud"
@@ -21,20 +42,38 @@ msgstr "Kustutatud"
 msgid "Disabled"
 msgstr "Keelatud"
 
+msgid "Global Scrips"
+msgstr "Globaalsed skriptid"
+
 msgid "Groups"
 msgstr "Grupid"
+
+msgid "In Use"
+msgstr "Kasutusel"
+
+msgid "Mail Errors"
+msgstr "Meilivead"
 
 msgid "New"
 msgstr "Uus"
 
+msgid "Other"
+msgstr "Muu"
+
 msgid "Privileged"
 msgstr "Privilegeeritud"
+
+msgid "Queue-specific"
+msgstr "Järjekorrapõhine"
 
 msgid "Queues"
 msgstr "Järjekorrad"
 
 msgid "Resolved"
 msgstr "Lahendatud"
+
+msgid "Scrips total"
+msgstr "Skripte kokku"
 
 msgid "Tickets total"
 msgstr "Pileteid kokku"

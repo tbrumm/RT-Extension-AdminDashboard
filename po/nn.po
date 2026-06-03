@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktiv"
 
+msgid "Active Classes"
+msgstr "Aktive klassar"
+
+msgid "Allocated"
+msgstr "Tildelt"
+
+msgid "Articles total"
+msgstr "Totalt artiklar"
+
+msgid "Assets total"
+msgstr "Totalt eigedelar"
+
+msgid "Catalogs total"
+msgstr "Totalt katalogar"
+
+msgid "Classes total"
+msgstr "Totalt klassar"
+
 msgid "Configuration"
 msgstr "Konfigurasjon"
 
 msgid "Custom Fields"
 msgstr "Eigendefinerte felt"
+
+msgid "Database Size (MB)"
+msgstr "Databasestorleik (MB)"
 
 msgid "Deleted"
 msgstr "Sletta"
@@ -21,20 +42,38 @@ msgstr "Sletta"
 msgid "Disabled"
 msgstr "Deaktivert"
 
+msgid "Global Scrips"
+msgstr "Globale scrips"
+
 msgid "Groups"
 msgstr "Grupper"
+
+msgid "In Use"
+msgstr "I bruk"
+
+msgid "Mail Errors"
+msgstr "E-postfeil"
 
 msgid "New"
 msgstr "Ny"
 
+msgid "Other"
+msgstr "Anna"
+
 msgid "Privileged"
 msgstr "Privilegert"
+
+msgid "Queue-specific"
+msgstr "Køspesifikk"
 
 msgid "Queues"
 msgstr "Køar"
 
 msgid "Resolved"
 msgstr "Løyst"
+
+msgid "Scrips total"
+msgstr "Totalt scrips"
 
 msgid "Tickets total"
 msgstr "Totalt tal saker"

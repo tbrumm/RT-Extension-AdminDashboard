@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktívny"
 
+msgid "Active Classes"
+msgstr "Aktívne triedy"
+
+msgid "Allocated"
+msgstr "Priradené"
+
+msgid "Articles total"
+msgstr "Celkom článkov"
+
+msgid "Assets total"
+msgstr "Celkom aktív"
+
+msgid "Catalogs total"
+msgstr "Celkom katalógov"
+
+msgid "Classes total"
+msgstr "Celkom tried"
+
 msgid "Configuration"
 msgstr "Konfigurácia"
 
 msgid "Custom Fields"
 msgstr "Vlastné polia"
+
+msgid "Database Size (MB)"
+msgstr "Veľkosť databázy (MB)"
 
 msgid "Deleted"
 msgstr "Zmazané"
@@ -21,20 +42,38 @@ msgstr "Zmazané"
 msgid "Disabled"
 msgstr "Vypnuté"
 
+msgid "Global Scrips"
+msgstr "Globálne skripty"
+
 msgid "Groups"
 msgstr "Skupiny"
+
+msgid "In Use"
+msgstr "Používa sa"
+
+msgid "Mail Errors"
+msgstr "Chyby pošty"
 
 msgid "New"
 msgstr "Nový"
 
+msgid "Other"
+msgstr "Iné"
+
 msgid "Privileged"
 msgstr "Privilegovaný"
+
+msgid "Queue-specific"
+msgstr "Špecifický pre frontu"
 
 msgid "Queues"
 msgstr "Fronty"
 
 msgid "Resolved"
 msgstr "Vyriešené"
+
+msgid "Scrips total"
+msgstr "Celkom skriptov"
 
 msgid "Tickets total"
 msgstr "Celkom požiadaviek"

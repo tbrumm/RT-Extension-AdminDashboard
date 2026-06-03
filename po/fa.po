@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "فعال"
 
+msgid "Active Classes"
+msgstr "کلاس‌های فعال"
+
+msgid "Allocated"
+msgstr "تخصیص‌یافته"
+
+msgid "Articles total"
+msgstr "مجموع مقالات"
+
+msgid "Assets total"
+msgstr "مجموع دارایی‌ها"
+
+msgid "Catalogs total"
+msgstr "مجموع کاتالوگ‌ها"
+
+msgid "Classes total"
+msgstr "مجموع کلاس‌ها"
+
 msgid "Configuration"
 msgstr "پیکربندی"
 
 msgid "Custom Fields"
 msgstr "فیلدهای سفارشی"
+
+msgid "Database Size (MB)"
+msgstr "اندازه پایگاه داده (مگابایت)"
 
 msgid "Deleted"
 msgstr "حذف شده"
@@ -21,20 +42,38 @@ msgstr "حذف شده"
 msgid "Disabled"
 msgstr "غیرفعال"
 
+msgid "Global Scrips"
+msgstr "اسکریپت‌های سراسری"
+
 msgid "Groups"
 msgstr "گروه‌ها"
+
+msgid "In Use"
+msgstr "در حال استفاده"
+
+msgid "Mail Errors"
+msgstr "خطاهای ایمیل"
 
 msgid "New"
 msgstr "جدید"
 
+msgid "Other"
+msgstr "سایر"
+
 msgid "Privileged"
 msgstr "دارای امتیاز"
+
+msgid "Queue-specific"
+msgstr "مختص صف"
 
 msgid "Queues"
 msgstr "صف‌ها"
 
 msgid "Resolved"
 msgstr "حل شده"
+
+msgid "Scrips total"
+msgstr "مجموع اسکریپت‌ها"
 
 msgid "Tickets total"
 msgstr "مجموع درخواست‌ها"

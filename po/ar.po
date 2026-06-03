@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "نشط"
 
+msgid "Active Classes"
+msgstr "الفئات النشطة"
+
+msgid "Allocated"
+msgstr "مُخصَّص"
+
+msgid "Articles total"
+msgstr "إجمالي المقالات"
+
+msgid "Assets total"
+msgstr "إجمالي الأصول"
+
+msgid "Catalogs total"
+msgstr "إجمالي الفهارس"
+
+msgid "Classes total"
+msgstr "إجمالي الفئات"
+
 msgid "Configuration"
 msgstr "الإعدادات"
 
 msgid "Custom Fields"
 msgstr "الحقول المخصصة"
+
+msgid "Database Size (MB)"
+msgstr "حجم قاعدة البيانات (ميغابايت)"
 
 msgid "Deleted"
 msgstr "محذوف"
@@ -21,20 +42,38 @@ msgstr "محذوف"
 msgid "Disabled"
 msgstr "معطّل"
 
+msgid "Global Scrips"
+msgstr "سكريبتات عالمية"
+
 msgid "Groups"
 msgstr "المجموعات"
+
+msgid "In Use"
+msgstr "قيد الاستخدام"
+
+msgid "Mail Errors"
+msgstr "أخطاء البريد"
 
 msgid "New"
 msgstr "جديد"
 
+msgid "Other"
+msgstr "أخرى"
+
 msgid "Privileged"
 msgstr "متميز"
+
+msgid "Queue-specific"
+msgstr "خاص بالطابور"
 
 msgid "Queues"
 msgstr "الطوابير"
 
 msgid "Resolved"
 msgstr "محلول"
+
+msgid "Scrips total"
+msgstr "إجمالي السكريبتات"
 
 msgid "Tickets total"
 msgstr "إجمالي التذاكر"

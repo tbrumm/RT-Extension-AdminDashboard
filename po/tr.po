@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktif"
 
+msgid "Active Classes"
+msgstr "Aktif sınıflar"
+
+msgid "Allocated"
+msgstr "Tahsis edildi"
+
+msgid "Articles total"
+msgstr "Toplam makaleler"
+
+msgid "Assets total"
+msgstr "Toplam varlıklar"
+
+msgid "Catalogs total"
+msgstr "Toplam kataloglar"
+
+msgid "Classes total"
+msgstr "Toplam sınıflar"
+
 msgid "Configuration"
 msgstr "Yapılandırma"
 
 msgid "Custom Fields"
 msgstr "Özel alanlar"
+
+msgid "Database Size (MB)"
+msgstr "Veritabanı boyutu (MB)"
 
 msgid "Deleted"
 msgstr "Silindi"
@@ -21,20 +42,38 @@ msgstr "Silindi"
 msgid "Disabled"
 msgstr "Devre dışı"
 
+msgid "Global Scrips"
+msgstr "Global scrips"
+
 msgid "Groups"
 msgstr "Gruplar"
+
+msgid "In Use"
+msgstr "Kullanımda"
+
+msgid "Mail Errors"
+msgstr "E-posta hataları"
 
 msgid "New"
 msgstr "Yeni"
 
+msgid "Other"
+msgstr "Diğer"
+
 msgid "Privileged"
 msgstr "Ayrıcalıklı"
+
+msgid "Queue-specific"
+msgstr "Kuyruk-özel"
 
 msgid "Queues"
 msgstr "Kuyruklar"
 
 msgid "Resolved"
 msgstr "Çözüldü"
+
+msgid "Scrips total"
+msgstr "Toplam scrips"
 
 msgid "Tickets total"
 msgstr "Toplam biletler"

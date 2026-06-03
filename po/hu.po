@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktív"
 
+msgid "Active Classes"
+msgstr "Aktív osztályok"
+
+msgid "Allocated"
+msgstr "Kiosztva"
+
+msgid "Articles total"
+msgstr "Cikkek összesen"
+
+msgid "Assets total"
+msgstr "Eszközök összesen"
+
+msgid "Catalogs total"
+msgstr "Katalógusok összesen"
+
+msgid "Classes total"
+msgstr "Osztályok összesen"
+
 msgid "Configuration"
 msgstr "Konfiguráció"
 
 msgid "Custom Fields"
 msgstr "Egyéni mezők"
+
+msgid "Database Size (MB)"
+msgstr "Adatbázis mérete (MB)"
 
 msgid "Deleted"
 msgstr "Törölve"
@@ -21,20 +42,38 @@ msgstr "Törölve"
 msgid "Disabled"
 msgstr "Letiltva"
 
+msgid "Global Scrips"
+msgstr "Globális scrips-ek"
+
 msgid "Groups"
 msgstr "Csoportok"
+
+msgid "In Use"
+msgstr "Használatban"
+
+msgid "Mail Errors"
+msgstr "Levélküldési hibák"
 
 msgid "New"
 msgstr "Új"
 
+msgid "Other"
+msgstr "Egyéb"
+
 msgid "Privileged"
 msgstr "Kiemelt"
+
+msgid "Queue-specific"
+msgstr "Várólistaspecifikus"
 
 msgid "Queues"
 msgstr "Várólisták"
 
 msgid "Resolved"
 msgstr "Megoldva"
+
+msgid "Scrips total"
+msgstr "Összes scrips"
 
 msgid "Tickets total"
 msgstr "Jegyek összesen"

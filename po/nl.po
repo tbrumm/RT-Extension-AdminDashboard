@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Actief"
 
+msgid "Active Classes"
+msgstr "Actieve klassen"
+
+msgid "Allocated"
+msgstr "Toegewezen"
+
+msgid "Articles total"
+msgstr "Totaal artikelen"
+
+msgid "Assets total"
+msgstr "Totaal assets"
+
+msgid "Catalogs total"
+msgstr "Totaal catalogi"
+
+msgid "Classes total"
+msgstr "Totaal klassen"
+
 msgid "Configuration"
 msgstr "Configuratie"
 
 msgid "Custom Fields"
 msgstr "Aangepaste velden"
+
+msgid "Database Size (MB)"
+msgstr "Databasegrootte (MB)"
 
 msgid "Deleted"
 msgstr "Verwijderd"
@@ -21,20 +42,38 @@ msgstr "Verwijderd"
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
+msgid "Global Scrips"
+msgstr "Globale scrips"
+
 msgid "Groups"
 msgstr "Groepen"
+
+msgid "In Use"
+msgstr "In gebruik"
+
+msgid "Mail Errors"
+msgstr "Mailfouten"
 
 msgid "New"
 msgstr "Nieuw"
 
+msgid "Other"
+msgstr "Overig"
+
 msgid "Privileged"
 msgstr "Geprivilegieerd"
+
+msgid "Queue-specific"
+msgstr "Wachtrij-specifiek"
 
 msgid "Queues"
 msgstr "Wachtrijen"
 
 msgid "Resolved"
 msgstr "Opgelost"
+
+msgid "Scrips total"
+msgstr "Totaal scrips"
 
 msgid "Tickets total"
 msgstr "Totaal tickets"

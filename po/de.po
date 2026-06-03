@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktiv"
 
+msgid "Active Classes"
+msgstr "Aktive Klassen"
+
+msgid "Allocated"
+msgstr "Zugeteilt"
+
+msgid "Articles total"
+msgstr "Artikel gesamt"
+
+msgid "Assets total"
+msgstr "Assets gesamt"
+
+msgid "Catalogs total"
+msgstr "Kataloge gesamt"
+
+msgid "Classes total"
+msgstr "Klassen gesamt"
+
 msgid "Configuration"
 msgstr "Konfiguration"
 
 msgid "Custom Fields"
 msgstr "Benutzerdefinierte Felder"
+
+msgid "Database Size (MB)"
+msgstr "Datenbankgröße (MB)"
 
 msgid "Deleted"
 msgstr "Gelöscht"
@@ -21,20 +42,38 @@ msgstr "Gelöscht"
 msgid "Disabled"
 msgstr "Deaktiviert"
 
+msgid "Global Scrips"
+msgstr "Globale Scrips"
+
 msgid "Groups"
 msgstr "Gruppen"
+
+msgid "In Use"
+msgstr "In Benutzung"
+
+msgid "Mail Errors"
+msgstr "E-Mail-Fehler"
 
 msgid "New"
 msgstr "Neu"
 
+msgid "Other"
+msgstr "Sonstige"
+
 msgid "Privileged"
 msgstr "Privilegiert"
+
+msgid "Queue-specific"
+msgstr "Bereichsspezifisch"
 
 msgid "Queues"
 msgstr "Bereiche"
 
 msgid "Resolved"
 msgstr "Erledigt"
+
+msgid "Scrips total"
+msgstr "Scrips gesamt"
 
 msgid "Tickets total"
 msgstr "Tickets gesamt"

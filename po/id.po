@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktif"
 
+msgid "Active Classes"
+msgstr "Kelas aktif"
+
+msgid "Allocated"
+msgstr "Dialokasikan"
+
+msgid "Articles total"
+msgstr "Total artikel"
+
+msgid "Assets total"
+msgstr "Total aset"
+
+msgid "Catalogs total"
+msgstr "Total katalog"
+
+msgid "Classes total"
+msgstr "Total kelas"
+
 msgid "Configuration"
 msgstr "Konfigurasi"
 
 msgid "Custom Fields"
 msgstr "Bidang kustom"
+
+msgid "Database Size (MB)"
+msgstr "Ukuran basis data (MB)"
 
 msgid "Deleted"
 msgstr "Dihapus"
@@ -21,20 +42,38 @@ msgstr "Dihapus"
 msgid "Disabled"
 msgstr "Dinonaktifkan"
 
+msgid "Global Scrips"
+msgstr "Scrips global"
+
 msgid "Groups"
 msgstr "Grup"
+
+msgid "In Use"
+msgstr "Sedang digunakan"
+
+msgid "Mail Errors"
+msgstr "Kesalahan email"
 
 msgid "New"
 msgstr "Baru"
 
+msgid "Other"
+msgstr "Lainnya"
+
 msgid "Privileged"
 msgstr "Istimewa"
+
+msgid "Queue-specific"
+msgstr "Spesifik antrean"
 
 msgid "Queues"
 msgstr "Antrian"
 
 msgid "Resolved"
 msgstr "Diselesaikan"
+
+msgid "Scrips total"
+msgstr "Total scrips"
 
 msgid "Tickets total"
 msgstr "Total tiket"

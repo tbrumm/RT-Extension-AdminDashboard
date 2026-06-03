@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Активный"
 
+msgid "Active Classes"
+msgstr "Активные классы"
+
+msgid "Allocated"
+msgstr "Выделен"
+
+msgid "Articles total"
+msgstr "Статей всего"
+
+msgid "Assets total"
+msgstr "Активов всего"
+
+msgid "Catalogs total"
+msgstr "Каталогов всего"
+
+msgid "Classes total"
+msgstr "Классов всего"
+
 msgid "Configuration"
 msgstr "Конфигурация"
 
 msgid "Custom Fields"
 msgstr "Пользовательские поля"
+
+msgid "Database Size (MB)"
+msgstr "Размер базы данных (МБ)"
 
 msgid "Deleted"
 msgstr "Удалён"
@@ -21,20 +42,38 @@ msgstr "Удалён"
 msgid "Disabled"
 msgstr "Отключён"
 
+msgid "Global Scrips"
+msgstr "Глобальные скрипты"
+
 msgid "Groups"
 msgstr "Группы"
+
+msgid "In Use"
+msgstr "В использовании"
+
+msgid "Mail Errors"
+msgstr "Ошибки почты"
 
 msgid "New"
 msgstr "Новый"
 
+msgid "Other"
+msgstr "Прочее"
+
 msgid "Privileged"
 msgstr "Привилегированный"
+
+msgid "Queue-specific"
+msgstr "Специфичный для очереди"
 
 msgid "Queues"
 msgstr "Очереди"
 
 msgid "Resolved"
 msgstr "Решён"
+
+msgid "Scrips total"
+msgstr "Скриптов всего"
 
 msgid "Tickets total"
 msgstr "Заявок всего"

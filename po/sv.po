@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktiv"
 
+msgid "Active Classes"
+msgstr "Aktiva klasser"
+
+msgid "Allocated"
+msgstr "Tilldelad"
+
+msgid "Articles total"
+msgstr "Totalt artiklar"
+
+msgid "Assets total"
+msgstr "Totalt tillgångar"
+
+msgid "Catalogs total"
+msgstr "Totalt kataloger"
+
+msgid "Classes total"
+msgstr "Totalt klasser"
+
 msgid "Configuration"
 msgstr "Konfiguration"
 
 msgid "Custom Fields"
 msgstr "Anpassade fält"
+
+msgid "Database Size (MB)"
+msgstr "Databasstorlek (MB)"
 
 msgid "Deleted"
 msgstr "Raderad"
@@ -21,20 +42,38 @@ msgstr "Raderad"
 msgid "Disabled"
 msgstr "Inaktiverad"
 
+msgid "Global Scrips"
+msgstr "Globala scrips"
+
 msgid "Groups"
 msgstr "Grupper"
+
+msgid "In Use"
+msgstr "I bruk"
+
+msgid "Mail Errors"
+msgstr "E-postfel"
 
 msgid "New"
 msgstr "Ny"
 
+msgid "Other"
+msgstr "Övrigt"
+
 msgid "Privileged"
 msgstr "Privilegierad"
+
+msgid "Queue-specific"
+msgstr "Kö-specifik"
 
 msgid "Queues"
 msgstr "Köer"
 
 msgid "Resolved"
 msgstr "Löst"
+
+msgid "Scrips total"
+msgstr "Totalt scrips"
 
 msgid "Tickets total"
 msgstr "Totalt antal ärenden"

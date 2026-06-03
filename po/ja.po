@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "アクティブ"
 
+msgid "Active Classes"
+msgstr "アクティブなクラス"
+
+msgid "Allocated"
+msgstr "割り当て済み"
+
+msgid "Articles total"
+msgstr "記事合計"
+
+msgid "Assets total"
+msgstr "Asset合計"
+
+msgid "Catalogs total"
+msgstr "カタログ合計"
+
+msgid "Classes total"
+msgstr "クラス合計"
+
 msgid "Configuration"
 msgstr "設定"
 
 msgid "Custom Fields"
 msgstr "カスタムフィールド"
+
+msgid "Database Size (MB)"
+msgstr "データベースサイズ (MB)"
 
 msgid "Deleted"
 msgstr "削除済み"
@@ -21,20 +42,38 @@ msgstr "削除済み"
 msgid "Disabled"
 msgstr "無効"
 
+msgid "Global Scrips"
+msgstr "グローバルScrip"
+
 msgid "Groups"
 msgstr "グループ"
+
+msgid "In Use"
+msgstr "使用中"
+
+msgid "Mail Errors"
+msgstr "メールエラー"
 
 msgid "New"
 msgstr "新規"
 
+msgid "Other"
+msgstr "その他"
+
 msgid "Privileged"
 msgstr "特権ユーザー"
+
+msgid "Queue-specific"
+msgstr "キュー固有"
 
 msgid "Queues"
 msgstr "キュー"
 
 msgid "Resolved"
 msgstr "解決済み"
+
+msgid "Scrips total"
+msgstr "Scrip合計"
 
 msgid "Tickets total"
 msgstr "チケット合計"

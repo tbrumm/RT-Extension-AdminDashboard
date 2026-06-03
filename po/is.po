@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Virkt"
 
+msgid "Active Classes"
+msgstr "Virkar flokkar"
+
+msgid "Allocated"
+msgstr "Úthlutað"
+
+msgid "Articles total"
+msgstr "Greinar alls"
+
+msgid "Assets total"
+msgstr "Eignir alls"
+
+msgid "Catalogs total"
+msgstr "Vörulista alls"
+
+msgid "Classes total"
+msgstr "Flokkar alls"
+
 msgid "Configuration"
 msgstr "Stillingar"
 
 msgid "Custom Fields"
 msgstr "Sérsniðin svæði"
+
+msgid "Database Size (MB)"
+msgstr "Stærð gagnagrunns (MB)"
 
 msgid "Deleted"
 msgstr "Eytt"
@@ -21,20 +42,38 @@ msgstr "Eytt"
 msgid "Disabled"
 msgstr "Óvirkt"
 
+msgid "Global Scrips"
+msgstr "Altækar scrips"
+
 msgid "Groups"
 msgstr "Hópar"
+
+msgid "In Use"
+msgstr "Í notkun"
+
+msgid "Mail Errors"
+msgstr "Tölvupóstvillur"
 
 msgid "New"
 msgstr "Nýtt"
 
+msgid "Other"
+msgstr "Annað"
+
 msgid "Privileged"
 msgstr "Forréttindanotandi"
+
+msgid "Queue-specific"
+msgstr "Sértækt fyrir biðröð"
 
 msgid "Queues"
 msgstr "Biðraðir"
 
 msgid "Resolved"
 msgstr "Leyst"
+
+msgid "Scrips total"
+msgstr "Scrips alls"
 
 msgid "Tickets total"
 msgstr "Mál alls"

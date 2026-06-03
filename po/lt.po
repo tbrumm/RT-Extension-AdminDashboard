@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktyvus"
 
+msgid "Active Classes"
+msgstr "Aktyvios klasės"
+
+msgid "Allocated"
+msgstr "Paskirta"
+
+msgid "Articles total"
+msgstr "Iš viso straipsnių"
+
+msgid "Assets total"
+msgstr "Iš viso turto"
+
+msgid "Catalogs total"
+msgstr "Iš viso katalogų"
+
+msgid "Classes total"
+msgstr "Iš viso klasių"
+
 msgid "Configuration"
 msgstr "Konfigūracija"
 
 msgid "Custom Fields"
 msgstr "Pasirinktiniai laukai"
+
+msgid "Database Size (MB)"
+msgstr "Duomenų bazės dydis (MB)"
 
 msgid "Deleted"
 msgstr "Ištrintas"
@@ -21,20 +42,38 @@ msgstr "Ištrintas"
 msgid "Disabled"
 msgstr "Išjungtas"
 
+msgid "Global Scrips"
+msgstr "Globalūs skriptai"
+
 msgid "Groups"
 msgstr "Grupės"
+
+msgid "In Use"
+msgstr "Naudojama"
+
+msgid "Mail Errors"
+msgstr "Pašto klaidos"
 
 msgid "New"
 msgstr "Naujas"
 
+msgid "Other"
+msgstr "Kita"
+
 msgid "Privileged"
 msgstr "Privilegijuotas"
+
+msgid "Queue-specific"
+msgstr "Eilės specifinis"
 
 msgid "Queues"
 msgstr "Eilės"
 
 msgid "Resolved"
 msgstr "Išspręstas"
+
+msgid "Scrips total"
+msgstr "Iš viso skriptų"
 
 msgid "Tickets total"
 msgstr "Iš viso užklausų"

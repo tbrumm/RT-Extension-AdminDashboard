@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktibo"
 
+msgid "Active Classes"
+msgstr "Klase aktiboak"
+
+msgid "Allocated"
+msgstr "Esleituta"
+
+msgid "Articles total"
+msgstr "Artikuluak guztira"
+
+msgid "Assets total"
+msgstr "Aktiboak guztira"
+
+msgid "Catalogs total"
+msgstr "Kataloguak guztira"
+
+msgid "Classes total"
+msgstr "Klaseak guztira"
+
 msgid "Configuration"
 msgstr "Konfigurazioa"
 
 msgid "Custom Fields"
 msgstr "Eremu pertsonalizatuak"
+
+msgid "Database Size (MB)"
+msgstr "Datu-basearen tamaina (MB)"
 
 msgid "Deleted"
 msgstr "Ezabatua"
@@ -21,20 +42,38 @@ msgstr "Ezabatua"
 msgid "Disabled"
 msgstr "Desgaitua"
 
+msgid "Global Scrips"
+msgstr "Scrip globalak"
+
 msgid "Groups"
 msgstr "Taldeak"
+
+msgid "In Use"
+msgstr "Erabiltzen"
+
+msgid "Mail Errors"
+msgstr "Posta-akatsak"
 
 msgid "New"
 msgstr "Berria"
 
+msgid "Other"
+msgstr "Beste"
+
 msgid "Privileged"
 msgstr "Pribilegiatua"
+
+msgid "Queue-specific"
+msgstr "Ilara-espezifikoa"
 
 msgid "Queues"
 msgstr "Ilarak"
 
 msgid "Resolved"
 msgstr "Ebatzita"
+
+msgid "Scrips total"
+msgstr "Scrips guztira"
 
 msgid "Tickets total"
 msgstr "Txartelak guztira"

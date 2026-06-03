@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Aktiivinen"
 
+msgid "Active Classes"
+msgstr "Aktiiviset luokat"
+
+msgid "Allocated"
+msgstr "Kohdistettu"
+
+msgid "Articles total"
+msgstr "Artikkeleita yhteensä"
+
+msgid "Assets total"
+msgstr "Resursseja yhteensä"
+
+msgid "Catalogs total"
+msgstr "Luetteloita yhteensä"
+
+msgid "Classes total"
+msgstr "Luokkia yhteensä"
+
 msgid "Configuration"
 msgstr "Asetukset"
 
 msgid "Custom Fields"
 msgstr "Mukautetut kentät"
+
+msgid "Database Size (MB)"
+msgstr "Tietokannan koko (MB)"
 
 msgid "Deleted"
 msgstr "Poistettu"
@@ -21,20 +42,38 @@ msgstr "Poistettu"
 msgid "Disabled"
 msgstr "Poistettu käytöstä"
 
+msgid "Global Scrips"
+msgstr "Globaalit skipit"
+
 msgid "Groups"
 msgstr "Ryhmät"
+
+msgid "In Use"
+msgstr "Käytössä"
+
+msgid "Mail Errors"
+msgstr "Sähköpostivirheet"
 
 msgid "New"
 msgstr "Uusi"
 
+msgid "Other"
+msgstr "Muu"
+
 msgid "Privileged"
 msgstr "Etuoikeutettu"
+
+msgid "Queue-specific"
+msgstr "Jono-kohtainen"
 
 msgid "Queues"
 msgstr "Jonot"
 
 msgid "Resolved"
 msgstr "Ratkaistu"
+
+msgid "Scrips total"
+msgstr "Skipit yhteensä"
 
 msgid "Tickets total"
 msgstr "Tikettejä yhteensä"

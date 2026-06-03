@@ -9,11 +9,32 @@ msgstr ""
 msgid "Active"
 msgstr "Ενεργός"
 
+msgid "Active Classes"
+msgstr "Ενεργές κατηγορίες"
+
+msgid "Allocated"
+msgstr "Εκχωρημένο"
+
+msgid "Articles total"
+msgstr "Σύνολο άρθρων"
+
+msgid "Assets total"
+msgstr "Σύνολο περιουσιακών στοιχείων"
+
+msgid "Catalogs total"
+msgstr "Σύνολο καταλόγων"
+
+msgid "Classes total"
+msgstr "Σύνολο κατηγοριών"
+
 msgid "Configuration"
 msgstr "Ρυθμίσεις"
 
 msgid "Custom Fields"
 msgstr "Προσαρμοσμένα πεδία"
+
+msgid "Database Size (MB)"
+msgstr "Μέγεθος βάσης δεδομένων (MB)"
 
 msgid "Deleted"
 msgstr "Διαγράφηκε"
@@ -21,20 +42,38 @@ msgstr "Διαγράφηκε"
 msgid "Disabled"
 msgstr "Ανενεργό"
 
+msgid "Global Scrips"
+msgstr "Καθολικά scrips"
+
 msgid "Groups"
 msgstr "Ομάδες"
+
+msgid "In Use"
+msgstr "Σε χρήση"
+
+msgid "Mail Errors"
+msgstr "Σφάλματα αλληλογραφίας"
 
 msgid "New"
 msgstr "Νέο"
 
+msgid "Other"
+msgstr "Άλλο"
+
 msgid "Privileged"
 msgstr "Προνομιούχος"
+
+msgid "Queue-specific"
+msgstr "Ειδικό ουράς"
 
 msgid "Queues"
 msgstr "Ουρές"
 
 msgid "Resolved"
 msgstr "Επιλύθηκε"
+
+msgid "Scrips total"
+msgstr "Σύνολο scrips"
 
 msgid "Tickets total"
 msgstr "Σύνολο αιτημάτων"
