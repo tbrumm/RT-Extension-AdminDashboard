@@ -5,6 +5,10 @@ The bestpractical.com news iframe is gone; every admin section gets a
 full-width view with animated stat cards, progress-bar info cards, and
 responsive icon-grid navigation.
 
+Also provides a configurable **Login Banner** — a bilingual welcome or
+maintenance notice shown to all users on the RT login page, with editable
+content, an optional expiry date, and automatic deactivation.
+
 ## Covered pages
 
 | Page | Replaces |
@@ -15,6 +19,7 @@ responsive icon-grid navigation.
 | `/Admin/Articles/index.html` | Article administration overview |
 | `/Admin/Assets/` | Asset administration overview |
 | `/Admin/Tools/` | System tools overview |
+| `/Admin/Global/LoginBanner.html` | Login Banner management *(new)* |
 
 ## Screenshots
 
@@ -35,6 +40,12 @@ responsive icon-grid navigation.
 
 ### Custom Fields — `/Admin/Global/CustomFields/`
 ![Global custom field configuration](docs/screenshot-customfields.png)
+
+### Login Banner — displayed on the login page
+![Login Banner](docs/screenshot-loginbanner.png)
+
+### Login Banner — admin configuration page
+![Login Banner admin page](docs/screenshot-loginbanner-admin.png)
 
 ## Features
 
@@ -66,6 +77,21 @@ responsive icon-grid navigation.
   bundled with RT 6; no CDN calls
 - **Fully localised** — 37 languages, all extension-specific strings
   translated
+
+### Login Banner
+
+A bilingual (German/English) banner displayed above the login form.
+Managed via **Admin → Global → Login Banner**.
+
+- **On/off toggle** — enable or disable the banner at any time
+- **Expiry date** — set a date after which the banner is automatically
+  deactivated; RT checks the date on every login page request
+- **Editable headline** — the header bar text (HTML allowed)
+- **Editable content** — separate HTML text areas for German and English
+- **Live preview** — the banner preview below the editor updates in real
+  time as you type
+- **Persistent storage** — all settings are stored as RT system attributes
+  in the database; survive restarts
 
 ## Requirements
 
@@ -107,6 +133,12 @@ Shared CSS and the counter animation are factored into two Mason components
 (`html/Admin/Elements/AdminDashboardCSS` and `AdminDashboardJS`) included
 by all dashboard pages.
 
+The Login Banner stores all settings (enabled flag, expiry date, headline,
+German and English content) as a single JSON attribute on the RT system
+object (`MaintenanceBannerData`). The `BeforeForm` callback on the login
+page checks the attribute on every request and auto-deactivates the banner
+when the expiry date is reached.
+
 | Template | Purpose |
 |---|---|
 | `html/Admin/index.html` | Main admin dashboard |
@@ -115,9 +147,12 @@ by all dashboard pages.
 | `html/Admin/Assets/index.html` | Asset administration dashboard |
 | `html/Admin/Tools/index.html` | System tools dashboard |
 | `html/Admin/Global/CustomFields/index.html` | Custom field configuration dashboard |
+| `html/Admin/Global/LoginBanner.html` | Login Banner management page |
 | `html/Admin/Elements/AdminDashboardCSS` | Shared CSS (cards, bars, grid) |
 | `html/Admin/Elements/AdminDashboardJS` | Shared counter animation JS |
 | `html/Admin/Elements/Portal` | Widget-only fallback (legacy) |
+| `html/Callbacks/AdminDashboard/Elements/Login/BeforeForm` | Renders the login banner |
+| `html/Callbacks/AdminDashboard/Elements/Header/PrivilegedMainNav` | Registers Login Banner menu entry |
 
 ## Author
 
