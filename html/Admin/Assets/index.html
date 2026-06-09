@@ -1,16 +1,15 @@
-<%once>
-my (%_asset_stats, $_asset_expires);
-my $_ASSETCACHE_TTL = 600;
-</%once>
 <%init>
 my ($assets_total, $assets_allocated, $assets_inuse, $assets_other,
     $catalogs_total, $catalogs_active);
 
-if ($_asset_expires && time() < $_asset_expires) {
+my $attr = RT->System->FirstAttribute('AdminDashboardStats');
+my $s    = $attr ? $attr->Content->{assets} : undef;
+
+if ($s) {
     ($assets_total, $assets_allocated, $assets_inuse, $assets_other)
-        = @_asset_stats{qw(at aa ai ao)};
+        = @{$s}{qw(at aa ai ao)};
     ($catalogs_total, $catalogs_active)
-        = @_asset_stats{qw(ct ca)};
+        = @{$s}{qw(ct ca)};
 } else {
     my $dbh = $RT::Handle->dbh;
 
@@ -22,9 +21,9 @@ if ($_asset_expires && time() < $_asset_expires) {
     $assets_allocated = $by_status{allocated} // 0;
     $assets_inuse     = $by_status{'in-use'}  // 0;
     $assets_other     = 0;
-    for my $s (keys %by_status) {
-        next if $s eq 'allocated' || $s eq 'in-use';
-        $assets_other += $by_status{$s};
+    for my $st (keys %by_status) {
+        next if $st eq 'allocated' || $st eq 'in-use';
+        $assets_other += $by_status{$st};
     }
     $assets_total = $assets_allocated + $assets_inuse + $assets_other;
 
@@ -34,13 +33,6 @@ if ($_asset_expires && time() < $_asset_expires) {
     my %catd; $catd{$_->[0]} = $_->[1] for @$cat;
     $catalogs_active = $catd{0} // 0;
     $catalogs_total  = ($catd{0} // 0) + ($catd{1} // 0);
-
-    %_asset_stats = (
-        at => $assets_total,     aa => $assets_allocated,
-        ai => $assets_inuse,     ao => $assets_other,
-        ct => $catalogs_total,   ca => $catalogs_active,
-    );
-    $_asset_expires = time() + $_ASSETCACHE_TTL;
 }
 
 my $catalogs_disabled = $catalogs_total - $catalogs_active;

@@ -1,3 +1,10 @@
+1.2.0 2026-06-09
+ - Background stats refresh via cron (bin/rt-admin-dashboard-refresh)
+ - Stats stored as RT::Attribute on System object; survive Apache restarts
+ - Mason pages read from attribute; fall back to direct queries on first run
+ - Remove per-process in-memory cache (<%once> TTL pattern)
+ - All DB queries consolidated into RT::Extension::AdminDashboard::collect_stats()
+
 1.1.0 2026-06-02
  - Internationalize all UI strings; add translations for 37 languages
  - Switch all loc() msgids to English; German and other languages via po/

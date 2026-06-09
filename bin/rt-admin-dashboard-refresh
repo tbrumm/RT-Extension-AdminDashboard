@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib", '/opt/rt6/lib', '/opt/rt6/local/lib';
+
+use RT;
+use RT::Extension::AdminDashboard;
+
+RT::LoadConfig();
+RT::Init();
+
+my $stats = RT::Extension::AdminDashboard::collect_stats();
+
+my ( $ok, $msg ) = RT->System->SetAttribute(
+    Name        => 'AdminDashboardStats',
+    Description => 'Cached stats for Admin Dashboard extension',
+    Content     => $stats,
+);
+
+if ($ok) {
+    print "AdminDashboard stats refreshed at " . localtime($stats->{refreshed_at}) . "\n";
+} else {
+    print STDERR "AdminDashboard refresh failed: $msg\n";
+    exit 1;
+}

@@ -1,13 +1,12 @@
-<%once>
-my (%_tool_stats, $_tool_expires);
-my $_TOOLCACHE_TTL = 600;
-</%once>
 <%init>
 my ($db_size_mb, $custom_roles, $scheduled_procs, $sys_errors);
 
-if ($_tool_expires && time() < $_tool_expires) {
+my $attr = RT->System->FirstAttribute('AdminDashboardStats');
+my $s    = $attr ? $attr->Content->{tools} : undef;
+
+if ($s) {
     ($db_size_mb, $custom_roles, $scheduled_procs, $sys_errors)
-        = @_tool_stats{qw(ds cr sp se)};
+        = @{$s}{qw(ds cr sp se)};
 } else {
     my $dbh = $RT::Handle->dbh;
 
@@ -26,12 +25,6 @@ if ($_tool_expires && time() < $_tool_expires) {
     ($sys_errors) = $dbh->selectrow_array(
         "SELECT COUNT(*) FROM Transactions WHERE Type = 'SystemError'"
     );
-
-    %_tool_stats = (
-        ds => $db_size_mb, cr => $custom_roles,
-        sp => $scheduled_procs, se => $sys_errors,
-    );
-    $_tool_expires = time() + $_TOOLCACHE_TTL;
 }
 
 my $icon_for = sub {

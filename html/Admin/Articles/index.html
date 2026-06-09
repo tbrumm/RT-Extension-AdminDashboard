@@ -1,13 +1,12 @@
-<%once>
-my (%_astats, $_astats_expires);
-my $_ACACHE_TTL = 600;
-</%once>
 <%init>
 my ($classes_total, $classes_active, $articles_total, $articles_active);
 
-if ($_astats_expires && time() < $_astats_expires) {
-    ($classes_total, $classes_active)   = @_astats{qw(ct ca)};
-    ($articles_total, $articles_active) = @_astats{qw(at aa)};
+my $attr = RT->System->FirstAttribute('AdminDashboardStats');
+my $s    = $attr ? $attr->Content->{articles} : undef;
+
+if ($s) {
+    ($classes_total, $classes_active)   = @{$s}{qw(ct ca)};
+    ($articles_total, $articles_active) = @{$s}{qw(at aa)};
 } else {
     my $dbh = $RT::Handle->dbh;
 
@@ -24,12 +23,6 @@ if ($_astats_expires && time() < $_astats_expires) {
     my %ard; $ard{$_->[0]} = $_->[1] for @$ar;
     $articles_active = $ard{0} // 0;
     $articles_total  = ($ard{0} // 0) + ($ard{1} // 0);
-
-    %_astats = (
-        ct => $classes_total,  ca => $classes_active,
-        at => $articles_total, aa => $articles_active,
-    );
-    $_astats_expires = time() + $_ACACHE_TTL;
 }
 
 my $classes_disabled  = $classes_total  - $classes_active;

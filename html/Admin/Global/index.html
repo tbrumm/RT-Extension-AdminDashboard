@@ -1,7 +1,3 @@
-<%once>
-my (%_gstats, $_gstats_expires);
-my $_GCACHE_TTL = 600;
-</%once>
 <%init>
 my (
     $scrips_total, $scrips_global, $scrips_queue, $scrips_disabled,
@@ -9,13 +5,16 @@ my (
     $conditions_total, $actions_total,
 );
 
-if ($_gstats_expires && time() < $_gstats_expires) {
+my $attr = RT->System->FirstAttribute('AdminDashboardStats');
+my $s    = $attr ? $attr->Content->{global} : undef;
+
+if ($s) {
     ($scrips_total, $scrips_global, $scrips_queue, $scrips_disabled)
-        = @_gstats{qw(st sg sq sd)};
+        = @{$s}{qw(st sg sq sd)};
     ($templates_total, $templates_global, $templates_queue)
-        = @_gstats{qw(tt tg tq)};
+        = @{$s}{qw(tt tg tq)};
     ($conditions_total, $actions_total)
-        = @_gstats{qw(ct at)};
+        = @{$s}{qw(ct at)};
 } else {
     my $dbh = $RT::Handle->dbh;
 
@@ -32,14 +31,6 @@ if ($_gstats_expires && time() < $_gstats_expires) {
 
     ($conditions_total) = $dbh->selectrow_array("SELECT COUNT(*) FROM ScripConditions");
     ($actions_total)    = $dbh->selectrow_array("SELECT COUNT(*) FROM ScripActions");
-
-    %_gstats = (
-        st => $scrips_total,    sg => $scrips_global,
-        sq => $scrips_queue,    sd => $scrips_disabled,
-        tt => $templates_total, tg => $templates_global, tq => $templates_queue,
-        ct => $conditions_total, at => $actions_total,
-    );
-    $_gstats_expires = time() + $_GCACHE_TTL;
 }
 
 my %icon_map = (
